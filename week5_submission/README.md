@@ -1,3 +1,3 @@
 # Week 5 | Submission
 
-## User Stories, Release Plan, Sprint Plan
+## User Stories, Release Plan, Sprint 1 Plan
