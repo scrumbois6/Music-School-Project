@@ -54,7 +54,9 @@ ROOT_URLCONF = 'django_project.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [
+        '/Users/nickpettigrew/documents/uni/IAB299 - IT Project Design & Development/Group Assignment/Music-School-Project/django_project/homepage/templates'
+        ],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
