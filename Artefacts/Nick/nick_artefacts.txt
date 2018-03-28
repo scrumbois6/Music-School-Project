@@ -1,0 +1,15 @@
+Nick's Artefacts:
+
+Music School Requirements Document [1st March]
+
+Story Cards: [10th March]
+- 17
+- 18
+- 19
+- 20
+
+StoryCards_V1 (compiled each story into singular document)
+
+Release and Sprint Plan_1.3.pdf (combined seperated realse and sprint documents into singular formatted document - using provided and required template) [16th March]
+
+sprint&release Planning.xlsx (created excel document to calculate number of story points per sprint/release, and determine where stories would be used) [18th March]
