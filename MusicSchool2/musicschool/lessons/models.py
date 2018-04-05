@@ -7,11 +7,11 @@ class Student(models.Model):
     """
     Model representing a student within the Music School
     """
-    studentID = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    studentID = models.UUIDField(primary_key=True, default=uuid.uuid4, max_length=8)
     firstName = models.CharField(max_length=30, help_text="Enter your First Name Only")
     lastName = models.CharField(max_length=30, help_text="Enter your Last Name Only")
     DOB = models.DateField(help_text="Enter your Date of Birth")
-    teacherID = models.ForeignKey('Teacher', on_delete=models.SET_NULL, null=True)
+    #teacherID = models.ForeignKey('Teacher', on_delete=models.SET_NULL, null=True)
 
     def __str__(self):
         """
@@ -23,11 +23,11 @@ class Teacher(models.Model):
     """
     Model representing a teacher within the Music School
     """
-    teacherID = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    teacherID = models.UUIDField(primary_key=True, default=uuid.uuid4, max_length=8)
     firstName = models.CharField(max_length=30, help_text="Enter your First Name Only")
     lastName = models.CharField(max_length=30, help_text="Enter your Last Name Only")
     skillsSummary = models.TextField(max_length=1000, help_text="Provide a brief summary of your teaching skills and history")
-    studentID = models.ManyToManyField(Student, help_text="Select your students", null=True)
+    #studentID = models.ManyToManyField(Student, help_text="Select your students", null=False)
     
     def __str__(self):
         """
@@ -45,7 +45,7 @@ class Equiptment(models.Model):
     """
     Model representing an instrument available for loan within the Music School
     """
-    instrumentID = models.UUIDField(primary_key=True, default=uuid.uuid4)
+    instrumentID = models.UUIDField(primary_key=True, default=uuid.uuid4, max_length=8)
     instrument = models.CharField(max_length=20, help_text="Enter a name for the instrument")
     due_back = models.DateField(null=True, blank=True)
 
@@ -66,7 +66,7 @@ class Equiptment(models.Model):
         """
         String for representing the 'Equiptment' Model object
         """
-        return '{0} ({1})'.format(self.id,self.instrument.student)
+        return '{0} ({1})'.format(self.instrumentID,self.instrument)
 
 
 
