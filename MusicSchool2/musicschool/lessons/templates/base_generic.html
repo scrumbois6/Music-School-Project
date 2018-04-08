@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  
+  {% block title %}<title>Scrumbois Music School</title>{% endblock %}
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <!-- Add additional CSS in static file -->
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+
+  <div class="flex-container">
+    <header>
+      <h1>Welcome to the ScrumBois' Music School</h1>
+    </header>
+
+  <div class="nav">
+    {% block navigation %}
+    <button class="button button1"><a href="{% url 'index' %}">HOME</a></button>
+    <button class="button button1">ADMIN</button>
+    <button class="button button1">TEACHER</button>
+    <button class="button button1">STUDENT</button>
+    {% endblock %}
+  </nav>
+
+  <body class="body">
+    {% block body_header %}
+    <h2> Welcome</h2>
+    {% load static %}
+    <img src="{% static 'images/instruments.jpg' %}" alt="ScrumBois Instruments" style="padding-left: 30%; width: 70%; height: 70%;"/>
+    {% endblock %}
+    {% block content %}
+    <p><strong>Blurb about music school....</strong></p>
+    <ul>
+      <li>Want to apply to teach at Scrumbois Music School? Click here!</li>
+      <li>Want to apply to learn an instrument at Scrumbois Music School? Click here!</li>
+    </ul>
+    {% endblock %}
+  </body>
+
+  <footer>Page produced by Scrumbois &copy; using Django</footer>
+
+  </div>
+
+  </body>
+
+  </html>

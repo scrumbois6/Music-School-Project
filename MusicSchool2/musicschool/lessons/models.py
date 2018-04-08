@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from datetime import date, timedelta
 import uuid
 
 # Create your models here.
@@ -18,6 +19,16 @@ class Student(models.Model):
         String for representing the Model object (in Admin site etc.)
         """
         return self.firstName
+
+    def __str__(self):
+        """
+        String representing average student age
+        """
+        l = [DOB, ...]
+        today = date.today()
+        avg_age = sum((today - x for x in l), timedelta(0)) / len(l)
+        return self.avg_age
+
 
 class Teacher(models.Model):
     """
