@@ -1,6 +1,6 @@
 from django.db import models
 
-from django.contrib.auth.models import AbstractUser
+from django.contrib.auth.models import User, AbstractUser
 
 class User(AbstractUser):
 
@@ -19,6 +19,7 @@ class User(AbstractUser):
 	#guardian firstName
 	#guardian lastName
 
-
-	test_field = models.CharField(max_length = 2, default = "Hi")
+	#this test field has been implemented correctly and added
+	#to django admin. leave here for testing
+	test_field = models.CharField(max_length = 10, default = "Hi")
 	
