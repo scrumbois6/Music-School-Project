@@ -1,0 +1,53 @@
+*{
+	font-size: 0;
+	margin: 0;
+	padding: 0;
+}
+
+body{
+	background-color: rgb(43,14,66);  
+}
+
+#logo{
+	width: 60%;
+	margin-left: 45%;
+	padding-top: 30vh;
+}
+
+
+
+#content-left{
+	height:90vh;
+	width: 30%;
+	display: inline-block;
+	vertical-align: top;
+	background-color: white;
+}
+
+#content-right{
+	height:90vh;
+	width: 70%;
+	display: inline-block;
+	vertical-align: top;
+	background-color: #ededed;
+}
+
+#select{
+	width: 70%;
+	margin-left: 15%;
+	background-color: blue;
+	height:30vh;
+	margin-top: 26vh;
+}
+
+.login{
+	width: 35%;
+	display: inline-block;
+	height: 30vh;
+	vertical-align: top;
+	margin-left: 10%;
+}
+
+.login-image{
+	
+}

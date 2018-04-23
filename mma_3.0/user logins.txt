@@ -1,0 +1,14 @@
+n: admin
+e: admin@mma.com
+p: fuckdjango
+
+Students:
+
+student1@email.com
+scrumbois1
+
+Teachers:
+
+teacher1@email.com
+scrumbois2
+
