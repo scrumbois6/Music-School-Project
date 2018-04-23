@@ -1,36 +1,5 @@
-<!DOCTYPE html>
-<html>
-<head>
-	<title>Mila's Music Academy - Home</title>
-	<!-- Add additional CSS in static file -->
-  {% load static %}
-  <link rel="stylesheet" href="{% static 'css/style.css' %}">
-</head>
+{% extends "general_template.html" %}
 
-<body>
-	<div id='container'>
-	<p>Mila's Music Academy</p>
-	<br>
-	<form onsubmit="null">
-		<label>Username</label>
-
-		<br>
-
-		<input type="text" name="username">
-
-		<br>
-		
-		<label>Password</label>
-
-		<br>
-
-		<input type="password" name="password">
-		
-		<br>
-		
-		<input type="submit" name="submit">
-	</form>
-	</div>
-</body>
-
-</html>
+{% block body_title %}
+<h2>Please enter your <storng>Student</storng>, <storng>Teacher</storng>. or <storng>Admin</storng> credentials in the fields below to proceed to the Music School.
+{% endblock %}
