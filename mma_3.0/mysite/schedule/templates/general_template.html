@@ -3,7 +3,7 @@
 <head>
 	<!-- Title Block -->
 	{% block title %}
-	<title>Mila's Music Academy - Home</title>
+	<title>Mila's Music Academy</title>
 	{% endblock %}
 
 	<meta charset="utf-8">
@@ -14,21 +14,42 @@
 	</script>
 	<!-- Add additional CSS in static file -->
   	{% load static %}
-  	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+  	<link rel="stylesheet" href="{% static 'css/styles2.css' %}">
 </head>
 
 <body>
-	<div class="flex-container">
-    <header>
-      <h1>Mila's Music Acadamy</h1>
-    </header>
-    <body class="body">
-    {% block body_title %}
-    <h2>Welcome</h2>
-    {% load static %}
-    <img src="{% static 'images/instruments.jpg' %}" alt="ScrumBois Instruments" style="padding-left: 0%; width: 70%; height: 70%;"/>
-    {% endblock %}
-    {% block body_content %}
+
+<div id="header">
+	{% block body_title %}
+	<h1>Header</h1>
+	{% endblock %}
+</div>
+
+<div id="left-nav">
+	{% block left_nav %}
+	{% load static %}
+	<img src="{% static 'images/instruments.jpg' %}" height="190" width="200">
+
+	<table>
+		<tr>
+			<button class="button button1">Button 1</button>
+		</tr>
+		<tr>
+			<button class="button button1">Button 2</button>
+		</tr>
+		<tr>
+			<button class="button button1">Button 3</button>
+		</tr>
+		<tr>
+			<button class="button button1">Button 4</button>
+		</tr>
+	</table>
+	{% endblock %}
+
+</div>
+
+<div id="main-contnet">
+{% block body_content %}
 	<form onsubmit="null">
 		<label>Username</label>
 
@@ -49,9 +70,17 @@
 		<input type="submit" name="submit">
 	</form>
 	{% endblock %}
-	</div> <!-- end body class -->
-</body>
+</div>
 
-<footer>Page produced by Scrumbois &copy; using Django</footer>
+<div id="right-nav">
+	{% block right_nav %}
+	{% endblock %}
+</div>
+
+<div id="footer">
+	<h3>Page produced by Scrumbois &copy; using Django</h3>
+</div>
+
+</body>
 
 </html>
