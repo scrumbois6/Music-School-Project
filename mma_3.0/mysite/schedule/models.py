@@ -8,7 +8,7 @@ class Lesson(models.Model):
 	# date and time is simply entered currently with no checks for double ups
 	# fix this later!!!
 
-    lesson_time = models.DateTimeField('Enter Lesson Time') #Lesson Time
+    lesson_time = models.DateTimeField('Lesson Time') #Lesson Time
 
 
     # lesson duration
