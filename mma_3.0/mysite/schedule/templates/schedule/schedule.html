@@ -1,0 +1,118 @@
+{% extends "general_template.html" %}
+
+{% block title %}
+	<title>Mila's Music Academy - Schedule</title>
+	{% endblock %}
+
+{% block left_nav %}
+<table align="centre">
+		<tr>
+			<td>
+			<button class="button button1"><strong>Lessons Schedule</strong></button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<button class="button button1" onclick="location.href='{% url 'instruments' %}'">Instruments</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<button class="button button1">Contracts</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<button class="button button1">Reports</button>
+			</td>
+		</tr>
+		<tr>
+			<td>
+			<button class="button button1" onclick="location.href='{% url 'profile' %}'">Profile</button>
+			</td>
+		</tr>
+	</table>
+
+{% endblock %}
+
+{% block body_content %}
+<h2>My Schedule</h2>
+<table style="border-style: solid; border-color: black">
+	<tr>
+		<td style="color: blue">Instrument</td>
+		<td style="color: blue">Lesson Date</td>
+		<td style="color: blue">Lesson Time</td>
+		<td style="color: blue">Room</td>
+		<td style="color: blue">Teacher</td>
+	</tr>
+	<tr>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+	</tr>
+	<tr>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+	</tr>
+	<tr>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+	</tr>
+	<tr>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+	</tr>
+	<tr>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+		<td>Dummy data</td>
+	</tr>
+</table>
+
+{% endblock %}
+
+{% block right_nav %}
+
+<table style="padding-left: 0%; border-style: solid; border-color: black">
+	<tr>
+		<td colspan="2"><h3>Book Lesson</h3></td>
+			<!-- Merged Columns for table header -->
+	</tr>
+	<tr>
+		<td>Instrument:</td>
+		<td><strong>DROPDOWN BOX HERE</strong></td>
+	</tr>
+	<tr>
+		<td>Date:</td>
+		<td><strong>DROPDOWN BOX HERE</strong></td>
+	</tr>
+	<tr>
+		<td>Time:</td>
+		<td><strong>DROPDOWN BOX HERE</strong></td>
+	</tr>
+	<tr>
+		<td>Teacher:</td>
+		<td><strong>DROPDOWN BOX HERE</strong></td>
+	</tr>
+	<tr>
+		<td colspan="2" style="color: strong green"><h3>Confirm</h3></td>
+			<!-- Merged Columns for table header -->
+	</tr>
+</table>
+
+{% endblock %}
+
+
