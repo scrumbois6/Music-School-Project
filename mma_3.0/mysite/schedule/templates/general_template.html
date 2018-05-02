@@ -24,10 +24,8 @@
 	<div class="flex-container">
 		<header class="header">
 			{% block body_header %}
-				<h1>Welcome to the ScrumBois' Music School</h1>
-
-				{% load static %}
-				<img src="{% static 'images/instruments.jpg' %}" alt="ScrumBois Instruments" style="width: 70%; height: 70%;"/>
+				<h1>Mika's Music Academy</h1>
+				
 			{% endblock %}
 		</header>
 
@@ -35,33 +33,15 @@
 			<div class="flex">
 				<div class="flex-full-width flex-start">
 					{% block navigation %}
-						<a class="button button1" href="{% url 'index' %}">HOME</a>
-						<a class="button button1" href="#">STUDENT</a>
-						<a class="button button1" href="#">TEACHER</a>
-						<a class="button button1" href="{% url 'admin:index' %}">ADMIN</a>
+						
 					{% endblock %}
-				</div>
-				<div class="flex-full-width flex-end">
-					<div>
-						{% if user.is_authenticated %}
-							<span>Logged in as {{ user.username }}</span>
-							<a class="button button1" href="{% url 'logout' %}">Logout</a>
-						{% else %}
-							<a class="button button1" href="{% url 'login' %}">Login</a>
-							<a class="button button1" href="{% url 'register' %}">Register</a>
-						{% endif %}
-					</div>
 				</div>
 			</div>
 		</div>
 
 		<div class="body">
 			{% block content %}
-				<p><strong>Blurb about music school....</strong></p>
-				<ul>
-					<li>Want to apply to teach at Scrumbois Music School? Click here!</li>
-					<li>Want to apply to learn an instrument at Scrumbois Music School? Click here!</li>
-				</ul>
+				
 			{% endblock %}
 		</div>
 

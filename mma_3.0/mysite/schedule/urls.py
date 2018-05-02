@@ -4,7 +4,7 @@ from . import views
 
 urlpatterns = [
     path('', views.index, name='index'),
-    path('schedule', views.schedule, name='schedule'),
+    path('schedule', views.index, name='index'),
     path('instruments', views.instruments, name='instruments'),
     path('profile', views.profile, name='profile'),
     url(r'^$', views.HomePageView.as_view())

@@ -6,10 +6,6 @@ from django.http import HttpResponse
 def index(request):
     return render(request, 'schedule/index.html')
 
-#defining schedule page view
-def schedule(request):
-	return render(request, 'schedule/schedule.html')
-
 def instruments(request):
 	return render(request, 'schedule/instruments.html')
 

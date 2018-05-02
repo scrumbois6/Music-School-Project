@@ -55,7 +55,7 @@ h3 {
 }
 
 header {
-  background: #000;
+  background: #ededed;
   padding: 30px;
   text-align: center;
   color: white;
@@ -168,4 +168,9 @@ footer {
   box-shadow: inset 0px 1px 4px #ECECEC;
   -moz-box-shadow: inset 0px 1px 4px #ECECEC;
   -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+p{
+  font-size: 20px;
+  color:black;
 }

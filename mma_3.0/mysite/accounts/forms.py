@@ -1,6 +1,7 @@
 from django import forms
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
+from django.contrib.auth.models import Group
 
 from .models import User
 
@@ -12,7 +13,7 @@ class StudentSignUpForm(UserCreationForm):
     def save(self):
         user = super().save(commit=False)
 
-        group = Group.objects.get(name='student')
+        group = Group.objects.get(name='Student')
         user.groups.add(group)
         user.save()
 
