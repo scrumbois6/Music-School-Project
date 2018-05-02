@@ -7,7 +7,8 @@
 {% if user.is_authenticated %}
 
 <!-- ################################# -->
-	<title>My Schedule</title>
+	<title>Schedule - {{ user.get_full_name }}</title>
+
 <!-- ################################# -->
 
 {% else %}
@@ -28,6 +29,7 @@
 
 <!-- ################################# -->
 	<p>My Schedule</p>
+
 <!-- ################################# -->
 
 {% else %}
@@ -69,7 +71,16 @@
 {% if user.is_authenticated %}
 
 <!-- ################################# -->
-	<p>Schedule Goes Here</p>
+	{% for obj in lessons %}
+		{% if obj.lesson_student_id == user.id %}
+			<p>Time: {{obj.lesson_time}}</p>
+			<p>Duration: {{obj.lesson_duration}} minutes</p>
+			<p>Location: Room {{obj.lesson_location}}</p>
+			<p>Teacher: {{obj.lesson_teacher.get_full_name}}</p>
+			<p>Student: {{obj.lesson_student.get_full_name}}</p>
+			<br>
+		{% endif %}
+	{% endfor %}
 <!-- ################################# -->
 
 {% else %}

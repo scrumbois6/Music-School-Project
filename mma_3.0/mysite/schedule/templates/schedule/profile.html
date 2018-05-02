@@ -7,7 +7,7 @@
 {% if user.is_authenticated %}
 
 <!-- ################################# -->
-	<title>My Profile</title>
+	<title>Profile  - {{ user.get_full_name }}</title>
 <!-- ################################# -->
 
 {% else %}
@@ -69,7 +69,17 @@
 {% if user.is_authenticated %}
 
 <!-- ################################# -->
-	<p>Profile Goes Here</p>
+	<p>Username: {{ user.get_username }}</p>
+	<p>Name: {{ user.get_full_name }}</p>
+	<p>Email: {{ user.email }}</p>
+	<p>Phone: {{ user.mobile_number }}</p>
+	<p>Address: {{ user.street_number }} {{ user.street_name }}, {{ user.suburb }}, {{ user.state }}, {{ user.post_code }}</p>
+
+	
+	<p>Guardian Name: {{ user.guardian_first_name }} {{ user.guardian_last_name }}</p>
+	<p>Guardian Phone: {{ user.guardian_mobile_number }}</p>
+	<p>Guardian Email: {{ user.guardian_email }}</p>
+	
 <!-- ################################# -->
 
 {% else %}
