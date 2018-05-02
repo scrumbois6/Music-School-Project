@@ -10,8 +10,11 @@ def index(request):
 def schedule(request):
 	return render(request, 'schedule/schedule.html')
 
-def admin(request):
-	return render(request, 'admin')
+def instruments(request):
+	return render(request, 'schedule/instruments.html')
+
+def profile(request):
+	return render(request, 'schedule/profile.html')
 
 # Landing Page View, from generic_template.html
 class HomePageView(TemplateView):
