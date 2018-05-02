@@ -1,0 +1,21 @@
+{% extends "general_template.html" %}
+
+{% block left_nav %}
+{% endblock %}
+
+{% block content %}
+
+<form method="post" class="form">
+	{% csrf_token %}
+
+	{% for field in form %}
+	    <div class="fields">
+			{{ field.errors }}
+			{{ field.label_tag }} {{ field }}
+	    </div>
+	{% endfor %}
+
+	<button type="submit">Register</button>
+</form>
+
+{% endblock %}

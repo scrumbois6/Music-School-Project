@@ -1,0 +1,14 @@
+{% extends "general_template.html" %}
+
+{% block left_nav %}
+{% endblock %}
+
+{% block content %}
+
+<form method="post" class="form">
+	{% csrf_token %}
+	{{ form.as_p }}
+	<button type="submit">Login</button>
+</form>
+
+{% endblock %}

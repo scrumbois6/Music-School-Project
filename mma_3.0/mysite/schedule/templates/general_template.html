@@ -32,12 +32,27 @@
 		</header>
 
 		<div class="nav">
-			{% block navigation %}
-				<a class="button button1" href="{% url 'index' %}">HOME</a>
-				<a class="button button1" href="#">STUDENT</a>
-				<a class="button button1" href="#">TEACHER</a>
-				<a class="button button1" href="#">ADMIN</a>
-			{% endblock %}
+			<div class="flex">
+				<div class="flex-full-width flex-start">
+					{% block navigation %}
+						<a class="button button1" href="{% url 'index' %}">HOME</a>
+						<a class="button button1" href="#">STUDENT</a>
+						<a class="button button1" href="#">TEACHER</a>
+						<a class="button button1" href="#">ADMIN</a>
+					{% endblock %}
+				</div>
+				<div class="flex-full-width flex-end">
+					<div>
+						{% if user.is_authenticated %}
+							<span>Logged in as {{ user.username }}</span>
+							<a class="button button1" href="{% url 'logout' %}">Logout</a>
+						{% else %}
+							<a class="button button1" href="{% url 'login' %}">Login</a>
+							<a class="button button1" href="{% url 'register' %}">Register</a>
+						{% endif %}
+					</div>
+				</div>
+			</div>
 		</div>
 
 		<div class="body">

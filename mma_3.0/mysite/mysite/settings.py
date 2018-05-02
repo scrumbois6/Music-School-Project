@@ -124,5 +124,7 @@ STATIC_URL = '/static/'
 #Custom User Model
 
 AUTH_USER_MODEL = 'accounts.User'
+LOGIN_REDIRECT_URL = 'index'
+LOGOUT_REDIRECT_URL = 'index'
 
 STATIC_URL = '/static/'
