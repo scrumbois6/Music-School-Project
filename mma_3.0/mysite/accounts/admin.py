@@ -17,13 +17,14 @@ class UserAdmin(UserAdmin):
     add_fieldsets = (
         (None, {
             'classes': ('wide',),
-            'fields': ('username', 'password1', 'password2', 'test_field', ),
+            'fields': ('username', 'password1', 'password2', 'mobile_number', 'street_number', 'street_name', 'suburb', 'state', 'post_code', 'under_18', 'guardian_first_name', 'guardian_last_name', 'guardian_mobile_number', 'guardian_email'  ),
         }),
     )
 
-    list_display = ('id','last_name','first_name','test_field','is_staff')
+    list_display = ('id','last_name','first_name','mobile_number','is_staff')
 
 #unregister standard user
 admin.site.unregister(User)
 #register custom user and custom admin
 admin.site.register(User, UserAdmin)
+
