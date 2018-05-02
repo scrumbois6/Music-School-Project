@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Title Block -->
+	{% block title %}
+	<title>Mila's Music Academy</title>
+	{% endblock %}
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script>
+	<!-- Add additional CSS in static file -->
+	{% load static %}
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+	<div class="flex-container">
+		<header class="header">
+			{% block body_header %}
+				<h1>Welcome to the ScrumBois' Music School</h1>
+
+				{% load static %}
+				<img src="{% static 'images/instruments.jpg' %}" alt="ScrumBois Instruments" style="width: 70%; height: 70%;"/>
+			{% endblock %}
+		</header>
+
+		<div class="nav">
+			{% block navigation %}
+				<a class="button button1" href="{% url 'index' %}">HOME</a>
+				<a class="button button1" href="#">STUDENT</a>
+				<a class="button button1" href="#">TEACHER</a>
+				<a class="button button1" href="#">ADMIN</a>
+			{% endblock %}
+		</div>
+
+		<div class="body">
+			{% block content %}
+				<p><strong>Blurb about music school....</strong></p>
+				<ul>
+					<li>Want to apply to teach at Scrumbois Music School? Click here!</li>
+					<li>Want to apply to learn an instrument at Scrumbois Music School? Click here!</li>
+				</ul>
+			{% endblock %}
+		</div>
+
+  		<footer>Page produced by Scrumbois &copy; using Django</footer>
+
+  	</div>
+
+</body>
+
+</html>
