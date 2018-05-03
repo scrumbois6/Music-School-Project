@@ -1,4 +1,5 @@
 from django import forms
+from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.contrib.auth.models import Group
@@ -18,3 +19,5 @@ class StudentSignUpForm(UserCreationForm):
         user.save()
 
         return user
+
+

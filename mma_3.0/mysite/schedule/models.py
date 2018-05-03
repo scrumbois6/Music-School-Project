@@ -7,13 +7,10 @@ class Lesson(models.Model):
 	# lesson time
 	# date and time is simply entered currently with no checks for double ups
 	# fix this later!!!
-
     lesson_time = models.DateTimeField('Lesson Time') #Lesson Time
-
 
     # lesson duration
     # stored as CHAR as it takes far less room than INT and they are not used for arithmeic
-
     LESSON_DURATION_CHOICES = (
         ("30", '30 Minutes'),
         ("60", '1 Hour'),
@@ -26,7 +23,6 @@ class Lesson(models.Model):
         choices = LESSON_DURATION_CHOICES,
         default = "60"
     )
-
 
     # lesson location
     LESSON_LOCATION_CHOICES = (
@@ -44,7 +40,6 @@ class Lesson(models.Model):
     )
 
     #add foreign keys for teacher and student involved in lesson
-
     lesson_student = models.ForeignKey("accounts.User", limit_choices_to={'groups__name': "Student"}, on_delete=models.CASCADE, default=0, related_name = "student")
 
     lesson_teacher = models.ForeignKey("accounts.User", limit_choices_to={'groups__name': "Teacher"}, on_delete=models.CASCADE, default=0, related_name = "teacher")

@@ -15,6 +15,8 @@ class User(AbstractUser):
         ("WA", 'Western Australia'),
         ("NT", 'Northern Territory')
     )
+    
+#CUSTOM FIELDS --------------------------------------------------------------------
 
 	#mobile
 	mobile_number = models.CharField(max_length = 10, default ="")
@@ -26,11 +28,8 @@ class User(AbstractUser):
 	suburb = models.CharField(max_length = 20, default = "")
 	#state
 	state = models.CharField(max_length = 3, default = "QLD", choices = STATE_CHOICES )
-
-
 	#postcode
 	post_code = models.CharField(max_length = 4, default = "")
-
 	#under18?
 	under_18 = models.BooleanField(default = "False")
 	#guardian firstName
@@ -41,7 +40,5 @@ class User(AbstractUser):
 	guardian_mobile_number = models.CharField(max_length = 10, default ="", blank = 'True')
 	#guardian email
 	guardian_email = models.EmailField(max_length=254, default = "", blank = 'True')
-	#this test field has been implemented correctly and added
-	#to django admin. leave here for testing
-	#test_field = models.CharField(min_length = 10, max_length = 10, default = "Hi")
+
 	
