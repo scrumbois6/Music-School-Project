@@ -7,7 +7,7 @@
 {% if user.is_authenticated %}
 
 <!-- ################################# -->
-	<title>Profile  - {{ user.get_full_name }}</title>
+	<title>Report  - {{ user.get_full_name }}</title>
 <!-- ################################# -->
 
 {% else %}
@@ -27,7 +27,7 @@
 {% if user.is_authenticated %}
 
 <!-- ################################# -->
-	<h1>My Profile</h1>
+	<h1>My Report</h1>
 <!-- ################################# -->
 
 {% else %}
@@ -48,8 +48,8 @@
 
 <!-- ################################# -->
 	<a class="button button1" href="{% url 'index' %}">Home</a>
-	<a class="button button1" href="{% url 'profile' %}"><strong>My Profile</strong></a>
-	<a class="button button1" href="{% url 'report' %}">My Report</a>
+	<a class="button button1" href="{% url 'profile' %}">My Profile</a>
+	<a class="button button1" href="{% url 'report' %}"><strong>My Report</strong></a>
 	<a class="button button1" href="{% url 'logout' %}">Logout</a>
 <!-- ################################# -->
 
@@ -72,7 +72,7 @@
 <!-- ################################# -->
 	<p>Username: {{ user.get_username }}</p>
 	<p>Name: {{ user.get_full_name }}</p>
-	<p>Email: {{ user.email }}</p>
+	<p>Email: {{ lesson.lesson_time }}</p>
 	<p>Phone: {{ user.mobile_number }}</p>
 	<p>Address: {{ user.street_number }} {{ user.street_name }}, {{ user.suburb }}, {{ user.state }}, {{ user.post_code }}</p>
 
