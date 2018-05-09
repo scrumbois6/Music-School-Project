@@ -153,7 +153,15 @@ footer {
   background: #CF7A7A
 }
 
-.form input[type="text"], .form input[type="password"], .form input[type="email"], .form textarea, .form select {
+.form .form-header {
+  margin: 0;
+  padding: 10px;
+
+  text-align: left;
+  font-size: 32pt;
+}
+
+.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="number"], .form textarea, .form select {
   border: 1px solid #DADADA;
   color: #888;
   height: 30px;
@@ -168,6 +176,24 @@ footer {
   box-shadow: inset 0px 1px 4px #ECECEC;
   -moz-box-shadow: inset 0px 1px 4px #ECECEC;
   -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.form .form-group {
+  display: inline;
+}
+
+.form fieldset {
+  margin-top: 15px;
+  margin-left: 0;
+  padding: 10px;
+
+  border: 1px solid #DADADA;
+  box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.form fieldset legend {
+  text-align: left;
+  margin-left: 0;
 }
 
 p{
