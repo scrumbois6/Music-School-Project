@@ -1,0 +1,202 @@
+/* Font Styles Here */
+* {
+  font-family: 'Open Sans', sans-serif;
+}
+
+h1 {
+  color: #4286f4;
+  text-align: center;
+}
+
+h2 {
+  color: #f4414d;
+  text-align: center;
+}
+
+h3 {
+  color: #f4a341;
+  text-align: center;
+}
+
+/*Page structure here*/
+.flex-container {
+    display: -webkit-flex;
+    display: flex;  
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    text-align: center;
+}
+
+.flex-container > * {
+    /* padding: 15px; */
+    -webkit-flex: 1 100%;
+    flex: 1 100%;
+}
+
+.flex {
+  display: -webkit-flex;
+  display: flex;
+}
+
+.flex-full-width {
+  width: 100%;
+}
+
+.flex-start {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-start;
+}
+
+.flex-end {
+  display: -webkit-flex;
+  display: flex;
+  justify-content: flex-end;
+}
+
+header {
+  background: #ededed;
+  padding: 30px;
+  text-align: center;
+  color: white;
+}
+
+footer {
+  padding: 0;
+  margin: 0;
+
+  background: #aaa;
+  color:white;
+  text-align: center;
+}
+
+.nav {
+  margin: 10px;
+}
+
+.body {
+  margin: 15px;
+}
+
+.button {
+  background-color: #4286f4; /* Matching title blue */
+  border-radius: 4px;
+  color: white;
+  padding: 16px 32px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* For use with Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+
+  text-decoration: none;
+  height: 20px;
+}
+
+.button1 {
+    background-color: white; 
+    color: black; 
+    border: 2px solid #4286f4;
+}
+
+.button1:hover {
+    background-color: #4286f4;
+    color: white;
+}
+
+@media all and (min-width: 768px) {
+    .nav {text-align:left; -webkit-flex: 1 auto; flex:1 auto;}
+    .article {-webkit-flex:5 0px; flex:5 0px; -webkit-order:2; order:2;}
+    footer {-webkit-order:3; order:3;}
+}
+
+.form {
+  margin-left:auto;
+  margin-right:auto;
+  max-width: 500px;
+  background: #F7F7F7;
+  padding: 25px 15px 25px 10px;
+  font: 12px Georgia, "Times New Roman", Times, serif;
+  color: #888;
+  text-shadow: 1px 1px 1px #FFF;
+  border:1px solid #E4E4E4;
+}
+
+.form label {
+    display: block;
+    margin: 0px;
+}
+
+.form label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #888;
+}
+
+.form button {
+  background: #E27575;
+  border: none;
+  padding: 10px 25px 10px 25px;
+  color: #FFF;
+  box-shadow: 1px 1px 5px #B6B6B6;
+  border-radius: 3px;
+  text-shadow: 1px 1px 1px #9E3F3F;
+  cursor: pointer;
+}
+
+.form button:hover {
+  background: #CF7A7A
+}
+
+.form .form-header {
+  margin: 0;
+  padding: 10px;
+
+  text-align: left;
+  font-size: 32pt;
+}
+
+.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="number"], .form textarea, .form select {
+  border: 1px solid #DADADA;
+  color: #888;
+  height: 30px;
+  margin-bottom: 16px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 3px 3px 3px 5px;
+  width: 70%;
+  font-size: 12px;
+  line-height:15px;
+  box-shadow: inset 0px 1px 4px #ECECEC;
+  -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+  -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.form .form-group {
+  display: inline;
+}
+
+.form fieldset {
+  margin-top: 15px;
+  margin-left: 0;
+  padding: 10px;
+
+  border: 1px solid #DADADA;
+  box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.form fieldset legend {
+  text-align: left;
+  margin-left: 0;
+}
+
+p{
+  font-size: 20px;
+  color:black;
+}

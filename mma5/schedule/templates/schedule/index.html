@@ -1,0 +1,105 @@
+{% extends "general_template.html" %}
+
+<!-- ################################# -->
+
+{% block title %}
+
+{% if user.is_authenticated %}
+
+<!-- ################################# -->
+	<title>Schedule - {{ user.get_full_name }}</title>
+
+<!-- ################################# -->
+
+{% else %}
+
+<!-- ################################# -->
+	<title>Login</title>
+<!-- ################################# -->
+        
+{% endif %}
+
+{% endblock %}
+
+<!-- ################################# -->
+
+{% block body_header %}
+
+{% if user.is_authenticated %}
+
+<!-- ################################# -->
+	<h1>My Schedule</h1>
+
+<!-- ################################# -->
+
+{% else %}
+
+<!-- ################################# -->
+	<h1>Mika's Music Academy</h1>
+<!-- ################################# -->
+        
+{% endif %}
+
+{% endblock %}
+
+<!-- ################################# -->
+
+{% block navigation %}
+
+{% if user.is_authenticated %}
+
+<!-- ################################# -->
+	<a class="button button1" href="{% url 'index' %}"><strong>Home</strong></a>
+	<a class="button button1" href="{% url 'profile' %}">My Profile</a>
+	<a class="button button1" href="{% url 'report' %}">My Report</a>
+	<a class="button button1" href="{% url 'logout' %}">Logout</a>
+<!-- ################################# -->
+
+{% else %}
+
+<!-- ################################# -->
+
+<!-- ################################# -->
+        
+{% endif %}
+
+{% endblock %}
+
+<!-- ################################# -->
+
+{% block content %}
+
+{% if user.is_authenticated %}
+
+<!-- ################################# -->
+	{% for obj in lessons %}
+		{% if obj.lesson_student_id == user.id %}
+			<p>Time: {{obj.lesson_time}}</p>
+			<p>Duration: {{obj.lesson_duration}} minutes</p>
+			<p>Location: Room {{obj.lesson_location}}</p>
+			<p>Teacher: {{obj.lesson_teacher.get_full_name}}</p>
+			<p>Student: {{obj.lesson_student.get_full_name}}</p>
+			<br>
+		{% endif %}
+	{% endfor %}
+<!-- ################################# -->
+
+{% else %}
+
+<!-- ################################# -->
+	<a class="button button1" href="{% url 'login' %}">Login</a>
+	<a class="button button1" href="{% url 'register' %}">Register</a>
+<!-- ################################# -->
+        
+{% endif %}
+
+{% endblock %}
+
+<!-- ################################# -->
+
+
+
+
+
+
+

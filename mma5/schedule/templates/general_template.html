@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<!-- Title Block -->
+	{% block title %}
+	<title>Mila's Music Academy</title>
+	{% endblock %}
+
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js">
+	</script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	</script>
+	<!-- Add additional CSS in static file -->
+	{% load static %}
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+
+<body>
+
+	<div class="flex-container">
+		<header class="header">
+			{% block body_header %}
+				<h1>Mika's Music Academy</h1>
+				
+			{% endblock %}
+		</header>
+
+		<div class="nav">
+			<div class="flex">
+				<div class="flex-full-width flex-start">
+					{% block navigation %}
+						
+					{% endblock %}
+				</div>
+			</div>
+		</div>
+
+		<div class="body">
+			{% block content %}
+				
+			{% endblock %}
+		</div>
+
+  		<footer>Page produced by Scrumbois &copy; using Django</footer>
+
+  	</div>
+
+</body>
+
+</html>
