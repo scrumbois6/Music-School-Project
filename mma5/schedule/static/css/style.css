@@ -3,6 +3,10 @@
   font-family: 'Open Sans', sans-serif;
 }
 
+body {
+    background-image: url('../images/bg.jpeg');
+}
+
 h1 {
   color: #4286f4;
   text-align: center;
@@ -55,8 +59,7 @@ h3 {
 }
 
 header {
-  background: #ededed;
-  padding: 30px;
+  padding: 10px;
   text-align: center;
   color: white;
 }
@@ -76,6 +79,7 @@ footer {
 
 .body {
   margin: 15px;
+
 }
 
 .button {

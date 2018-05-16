@@ -33,9 +33,14 @@
 <!-- ################################# -->
 
 {% else %}
-
+{% load static %}
 <!-- ################################# -->
-	<h1>Mika's Music Academy</h1>
+	<div id="frontpage">
+		<div id="logo_container">
+		<img id= "logo" src="{% static 'images/logo.jpg' %}">
+			
+		</div>
+	</div>
 <!-- ################################# -->
         
 {% endif %}
