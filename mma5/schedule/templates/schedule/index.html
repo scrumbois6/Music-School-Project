@@ -37,9 +37,15 @@
 <!-- ################################# -->
 	<div id="frontpage">
 		<div id="logo_container">
-		<img id= "logo" src="{% static 'images/logo.jpg' %}">
+		<img id= "logo" src="{% static 'images/logo.png' %}">
 			
 		</div>
+	</div>
+
+	<div id="home_buttons">
+		<p style="font-weight: 550;">Login, or Sign Up.</p>
+		<a class="button button1" href="{% url 'login' %}">Login</a>
+		<a class="button button1" href="{% url 'register' %}">Register</a>
 	</div>
 <!-- ################################# -->
         
@@ -92,8 +98,8 @@
 {% else %}
 
 <!-- ################################# -->
-	<a class="button button1" href="{% url 'login' %}">Login</a>
-	<a class="button button1" href="{% url 'register' %}">Register</a>
+
+	
 <!-- ################################# -->
         
 {% endif %}

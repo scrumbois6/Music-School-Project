@@ -78,10 +78,14 @@ WSGI_APPLICATION = 'mma5.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
+        #'NAME': 'u421422941_mma5',
         'NAME': 'mma5',
+        #'USER': 'u421422941_admin',
         'USER': 'admin',
+        #'PASSWORD': 'password',
         'PASSWORD': '',
-        'HOST': 'localhost',   # Or an IP Address that your DB is hosted on
+        #'HOST': 'sql149.main-hosting.eu.',   # Or an IP Address that your DB is hosted on
+        'HOST': 'localhost',
         'PORT': '3306',
     }
 }

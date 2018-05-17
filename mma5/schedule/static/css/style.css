@@ -22,63 +22,57 @@ h3 {
   text-align: center;
 }
 
-/*Page structure here*/
-.flex-container {
-    display: -webkit-flex;
-    display: flex;  
-    -webkit-flex-flow: row wrap;
-    flex-flow: row wrap;
-    text-align: center;
-}
 
-.flex-container > * {
-    /* padding: 15px; */
-    -webkit-flex: 1 100%;
-    flex: 1 100%;
-}
 
-.flex {
-  display: -webkit-flex;
-  display: flex;
-}
 
-.flex-full-width {
-  width: 100%;
-}
-
-.flex-start {
-  display: -webkit-flex;
-  display: flex;
-  justify-content: flex-start;
-}
-
-.flex-end {
-  display: -webkit-flex;
-  display: flex;
-  justify-content: flex-end;
-}
 
 header {
-  padding: 10px;
-  text-align: center;
+  width: 100%;
+  display: inline-block;
   color: white;
+  vertical-align: top;
+}
+
+#frontpage{
+  width: 60%;
+  display: inline-block;
+  color: white;
+  vertical-align: top;
+}
+
+#home_buttons{
+  width:39%;
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 20%;
+}
+
+#logo_container{
+width: 75%;
+margin: auto;
+
+}
+
+#logo{
+width:100%;
 }
 
 footer {
   padding: 0;
   margin: 0;
-
-  background: #aaa;
+  height:30vh;
+  background: #1e1e1e;
+  border-top:2px solid white;
   color:white;
   text-align: center;
 }
 
 .nav {
-  margin: 10px;
+
 }
 
 .body {
-  margin: 15px;
+
 
 }
 
@@ -102,19 +96,15 @@ footer {
 .button1 {
     background-color: white; 
     color: black; 
-    border: 2px solid #4286f4;
+    border: 2px solid #1e1e1e;
 }
 
 .button1:hover {
-    background-color: #4286f4;
+    background-color: #1e1e1e;
+    border: 2px solid #efefef;
     color: white;
 }
 
-@media all and (min-width: 768px) {
-    .nav {text-align:left; -webkit-flex: 1 auto; flex:1 auto;}
-    .article {-webkit-flex:5 0px; flex:5 0px; -webkit-order:2; order:2;}
-    footer {-webkit-order:3; order:3;}
-}
 
 .form {
   margin-left:auto;
