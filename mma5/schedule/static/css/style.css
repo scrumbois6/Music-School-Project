@@ -1,80 +1,61 @@
-/* Font Styles Here */
+/* Doc Styles */
 * {
   font-family: 'Open Sans', sans-serif;
+
 }
 
-body {
-    background-image: url('../images/bg.jpeg');
+body{
+  background: #1e1e1e;
 }
 
-h1 {
-  color: #4286f4;
+/* END BLOCK STYLES */
+
+/* Header Styles */
+
+h1, h2, h3, h4, h5, h6 {
+  color: black;
   text-align: center;
 }
 
-h2 {
-  color: #f4414d;
-  text-align: center;
-}
+/* END HEADER STYLES */
 
-h3 {
-  color: #f4a341;
-  text-align: center;
-}
-
-
-
-
-
+/* PAGE SECTIONS */
 header {
   width: 100%;
-  display: inline-block;
   color: white;
-  vertical-align: top;
+  min-height: 18vh;
+  background-color: #ededed;
 }
 
-#frontpage{
-  width: 60%;
-  display: inline-block;
-  color: white;
-  vertical-align: top;
-}
-
-#home_buttons{
-  width:39%;
-  display: inline-block;
-  vertical-align: top;
-  padding-top: 20%;
-}
-
-#logo_container{
-width: 75%;
-margin: auto;
+#nav{
+  width: 100%;
+  min-height: 5vh;
+  
+  background-color: #1e1e1e;
 
 }
 
-#logo{
-width:100%;
+#content{
+  width: 100%;
+  min-height: 77vh;
 }
 
-footer {
-  padding: 0;
-  margin: 0;
-  height:30vh;
+.login-bg {
+  width: 100%;
+  min-height: 80vh;
+  background-image: url('../images/bg.jpeg');
+}
+
+footer{
+  min-height:30vh;
   background: #1e1e1e;
   border-top:2px solid white;
   color:white;
   text-align: center;
 }
 
-.nav {
 
-}
-
-.body {
-
-
-}
+/* BUTTON STYLES */
 
 .button {
   background-color: #4286f4; /* Matching title blue */
@@ -88,9 +69,8 @@ footer {
   -webkit-transition-duration: 0.4s; /* For use with Safari */
   transition-duration: 0.4s;
   cursor: pointer;
-
   text-decoration: none;
-  height: 20px;
+  margin-top: 2.5vh;
 }
 
 .button1 {
@@ -105,22 +85,49 @@ footer {
     color: white;
 }
 
+.button2 {
+    background-color: #BB2100; 
+    color: white; 
+    border: 2px solid #1e1e1e;
+}
+
+.button2:hover {
+    background-color: #871800;
+    border: 2px solid #efefef;
+    color: white;
+}
+
+
+
+
+/* END BUTTON STYLES */
+
+/* FORM STYLES */
 
 .form {
   margin-left:auto;
   margin-right:auto;
-  max-width: 500px;
+  max-width: 60%;
   background: #F7F7F7;
   padding: 25px 15px 25px 10px;
-  font: 12px Georgia, "Times New Roman", Times, serif;
+  font-size: 12px;
   color: #888;
   text-shadow: 1px 1px 1px #FFF;
   border:1px solid #E4E4E4;
+  text-align: center;
+  margin-bottom: 5vh;
+
+
 }
 
 .form label {
     display: block;
     margin: 0px;
+    font-weight: 400;
+    color: black;
+    opacity: 0.7;
+    font-size: 12px;
+
 }
 
 .form label>span {
@@ -132,30 +139,18 @@ footer {
     color: #888;
 }
 
-.form button {
-  background: #E27575;
-  border: none;
-  padding: 10px 25px 10px 25px;
-  color: #FFF;
-  box-shadow: 1px 1px 5px #B6B6B6;
-  border-radius: 3px;
-  text-shadow: 1px 1px 1px #9E3F3F;
-  cursor: pointer;
-}
 
-.form button:hover {
-  background: #CF7A7A
-}
 
 .form .form-header {
   margin: 0;
   padding: 10px;
 
   text-align: left;
-  font-size: 32pt;
+  font-size: 28pt;
+  text-align: center;
 }
 
-.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="number"], .form textarea, .form select {
+.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="number"], .form textarea, .form select, .form input[type="checkbox"] {
   border: 1px solid #DADADA;
   color: #888;
   height: 30px;
@@ -165,11 +160,18 @@ footer {
   outline: 0 none;
   padding: 3px 3px 3px 5px;
   width: 70%;
-  font-size: 12px;
+  font-size: 14px;
   line-height:15px;
   box-shadow: inset 0px 1px 4px #ECECEC;
   -moz-box-shadow: inset 0px 1px 4px #ECECEC;
   -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+  text-align: center;
+  display:inline-block;
+  background: white;
+}
+
+form input[type="checkbox"]{
+  margin-left: 49%;
 }
 
 .form .form-group {
@@ -186,11 +188,30 @@ footer {
 }
 
 .form fieldset legend {
-  text-align: left;
+  text-align: center;
   margin-left: 0;
 }
 
-p{
-  font-size: 20px;
-  color:black;
+
+/* LOGIN PAGE */
+
+#logo_container{
+  display: inline-block;
+  vertical-align: top;
+  width: 15%;
+  margin-left: 5%;
+}
+
+#home_buttons {
+  width: 25%;
+  margin: auto;
+  text-align: left;
+}
+
+#logo {
+  width: 100%;
+}
+
+#home_buttons{
+  padding-top: 25vh;
 }

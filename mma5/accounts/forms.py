@@ -11,21 +11,35 @@ class StudentSignUpForm(UserCreationForm):
 
     class Meta(UserCreationForm.Meta):
         model = User
-        fields = ('username', 'email', 'mobile_number', 'street_number', 'street_name')
+        fields = ('username', 'first_name', 'last_name', 'email', 'mobile_number', 'street_number', 'street_name', 'suburb', 'state', 'post_code', 'under_18', 'guardian_first_name', 'guardian_last_name', 'guardian_mobile_number', 'guardian_email' )
         fieldsets = (
-            (None, {
-                'fields': ('username', 'email', 'mobile_number'),
+            ('Credentials', {
+                'fields': ('username'),
             }),
+            ('Contact', {
+                'fields': ('first_name', 'last_name','email', 'mobile_number'),
+            }),
+
             ('Address', {
-                'fields': ('street_number', 'street_name'),
+                'fields': ('street_number', 'street_name', 'suburb', 'state', 'post_code'),
+            }),
+            ('Guardian Info', {
+                'fields': ('under_18', 'guardian_first_name', 'guardian_last_name', 'guardian_mobile_number', 'guardian_email'),
             }),
         )
         add_fieldsets = (
-            (None, {
-                'fields': ('username', 'email', 'mobile_number'),
+            ('Credentials', {
+                'fields': ('username'),
             }),
+            ('Contact', {
+                'fields': ('first_name', 'last_name','email', 'mobile_number'),
+            }),
+
             ('Address', {
-                'fields': ('street_number', 'street_name'),
+                'fields': ('street_number', 'street_name', 'suburb', 'state', 'post_code'),
+            }),
+            ('Guardian Info', {
+                'fields': ('under_18', 'guardian_first_name', 'guardian_last_name', 'guardian_mobile_number', 'guardian_email'),
             }),
         )
 

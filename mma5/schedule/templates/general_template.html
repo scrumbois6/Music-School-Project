@@ -3,7 +3,7 @@
 <head>
 	<!-- Title Block -->
 	{% block title %}
-	<title>Mila's Music Academy</title>
+	<title>Mika's Music Academy</title>
 	{% endblock %}
 
 	<meta charset="utf-8">
@@ -12,8 +12,11 @@
 	</script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	</script>
+	
 	<!-- Add additional CSS in static file -->
 	{% load static %}
+	
+	
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -21,37 +24,37 @@
 
 <body>
 
-	<div class="flex-container">
-		<header class="header">
-			{% block body_header %}
-				
-				
+	<div class="container">
+
+		<header>
+			{% block body_header %}	
+				<div id="logo_container">
+				<a href="{% url 'index' %}">
+				<img id= "logo" src="{% static 'images/logo.png' %}" >
+				</a>
+				</div>
 			{% endblock %}
 		</header>
 
-		<div class="nav">
-			<div class="flex">
-				<div class="flex-full-width flex-start">
-					{% block navigation %}
-						
-					{% endblock %}
-				</div>
-			</div>
+		<div id="nav">
+			{% block navigation %}
+			{% endblock %}	
 		</div>
 
-		<div class="body">
-			{% block content %}
-				
+		<div id="content">
+			{% block content %}	
 			{% endblock %}
 		</div>
 
   		<footer>
-  			
-  			
+  		<br><br><br><br><br><br><br><br>
+  		<h4 style="color:#ededed;">&copy; 2018 Scrumbois Development Co.</h4>
+  		
+  		<h5 style="color:#ededed;">2 George Street, Brisbane, QLD, Australia 4000</h5>
   		</footer>
 
   	</div>
-
+<script src="{% static 'js/script.js' %}"></script>
 </body>
 
 </html>

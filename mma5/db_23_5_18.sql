@@ -18,12 +18,9 @@
 --
 -- Table structure for table `accounts_user`
 --
-
 DROP DATABASE IF EXISTS `mma5`;
 
 CREATE DATABASE `mma5`;
-
-USE `mma5`;
 
 DROP TABLE IF EXISTS `accounts_user`;
 /*!40101 SET @saved_cs_client     = @@character_set_client */;
@@ -53,7 +50,7 @@ CREATE TABLE `accounts_user` (
   `guardian_email` varchar(254) NOT NULL,
   PRIMARY KEY (`id`),
   UNIQUE KEY `username` (`username`)
-) ENGINE=InnoDB AUTO_INCREMENT=6 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=12 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -62,7 +59,7 @@ CREATE TABLE `accounts_user` (
 
 LOCK TABLES `accounts_user` WRITE;
 /*!40000 ALTER TABLE `accounts_user` DISABLE KEYS */;
-INSERT INTO `accounts_user` VALUES (1,'pbkdf2_sha256$100000$tx7uu8Y2gyVT$PkPfy+IzNxYWEAbEMPJL8lDiqAFHz6SOM4uyI1xVlbQ=','2018-05-16 01:21:00.519780',1,'admin','','','admin@mma.com.au',1,1,'2018-05-15 12:02:51.116345','','','','','QLD','',0,'','','',''),(2,'pbkdf2_sha256$100000$VEkzEB2daBV8$daqt6PerPlbBHo+skLUMBDOn5k/UmG78fZ8OGWEKeoM=','2018-05-15 13:02:00.843901',0,'testuser','Test','User','tu@t.com',0,1,'2018-05-15 12:41:37.000000','0123456789','12','Doggett Street','Newstead','QLD','4006',0,'Mum','Bullock','5674565432','mum@gmail.com'),(3,'pbkdf2_sha256$100000$xSJoGwceb0V1$NDFC4OQya/dqkfBxAMl1Nr2kmKRlO2Wv367VS0hQWOQ=','2018-05-16 01:18:07.847639',0,'teststudent','Test','Student','ts@t.com',0,1,'2018-05-15 12:57:32.000000','1234567890','1','Fake Street','Faketown','QLD','4000',0,'','','',''),(4,'pbkdf2_sha256$100000$Eky8W9kWAJ00$ZUjj+D2hC+a+n43c7pP5rTe1uhS/89PGqEmCu5Wopj4=','2018-05-15 13:03:21.648633',0,'johndoe','','','jd67891234@gmail.com',0,1,'2018-05-15 13:03:08.177980','0468765325','1','Fake Street','','QLD','',0,'','','',''),(5,'pbkdf2_sha256$100000$h3QwFrXVUkV6$YC3+R3QsqpDz6coi6Vr7tzYvlN5FOAlIrx5DSVtYwEM=','2018-05-16 01:20:35.404423',0,'Nick','','','nick@pettigrew.net.au',0,1,'2018-05-16 01:20:27.949275','0417737739','1','Street','','QLD','',0,'','','','');
+INSERT INTO `accounts_user` VALUES (1,'pbkdf2_sha256$100000$tx7uu8Y2gyVT$PkPfy+IzNxYWEAbEMPJL8lDiqAFHz6SOM4uyI1xVlbQ=','2018-05-22 19:02:58.197717',1,'admin','Mika','Williams','admin@mma.com.au',1,1,'2018-05-15 12:02:51.000000','','','','','QLD','',0,'','','',''),(6,'pbkdf2_sha256$100000$rcuMUtczxuuF$A7zoY4BR4lu73nFI/CszGhRjWvEX2YMmcHegO1n4O/g=','2018-05-22 18:49:00.967301',0,'jacobbullock','Jacob','Bullock','jacobbullock95@gmail.com',0,1,'2018-05-22 18:45:27.000000','0468918213','88','Doggett Street','NEWSTEAD','QLD','4006',0,'Mrs','Bullock','0123456789','nicolebullock@email.com'),(7,'pbkdf2_sha256$100000$w1csExTdT163$pLZ6mocAjzq9O4z9LzxBEdUhzNP/DpIABm+P9l3L6LI=',NULL,0,'nickpettigrew','Nick','Pettigrew','nickpettigrew@email.com',0,1,'2018-05-22 18:47:57.717788','0123456789','2','George Street','Brisbane','QLD','4000',0,'','','',''),(8,'pbkdf2_sha256$100000$tzuP4XxQUlmN$dgGFz3/QfXDSnKRbY13DonPSCrLFaxvEfulKmBcUxwM=',NULL,0,'kennethcheung','Kenneth','Cheung','kennethcheung@email.com',0,1,'2018-05-22 18:57:31.243195','0123456789','2','George Street','Brisbane','QLD','4000',0,'','','',''),(9,'pbkdf2_sha256$100000$JM68F6I7bljf$HCe7rSH4JyrKI9+m/Yh2ZYMwPWdinTF+hnZywkM1jAs=',NULL,0,'sebastianpeeler','Sebastian','Peeler','sebastianpeeler@email.com',0,1,'2018-05-22 18:58:08.124314','0123456789','2','George Street','Brisbane','QLD','4000',0,'','','',''),(10,'pbkdf2_sha256$100000$MWQKAKtE5TmP$kECZL+YTrq1vARokqsmhidH3qy5YGDJVMqxnzk0nh+Q=',NULL,0,'alexbutler','Alex','Butler','sebastianpeeler@email.com',0,1,'2018-05-22 18:58:34.763084','0123456789','2','George Street','Brisbane','QLD','4000',0,'','','',''),(11,'pbkdf2_sha256$100000$uavGpVQlzmPA$8wi/hW8NCGRpGIbmYhApZi/4mxPhy2mRG72WEU9CEuQ=','2018-05-22 19:00:12.000000',0,'hanszimmer','Hans','Zimmer','hz@email.com',0,1,'2018-05-22 18:59:49.000000','0123456789','1','Fake Street','Brisbane','QLD','4000',0,'','','','');
 /*!40000 ALTER TABLE `accounts_user` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -82,7 +79,7 @@ CREATE TABLE `accounts_user_groups` (
   KEY `accounts_user_groups_group_id_bd11a704_fk_auth_group_id` (`group_id`),
   CONSTRAINT `accounts_user_groups_group_id_bd11a704_fk_auth_group_id` FOREIGN KEY (`group_id`) REFERENCES `auth_group` (`id`),
   CONSTRAINT `accounts_user_groups_user_id_52b62117_fk_accounts_user_id` FOREIGN KEY (`user_id`) REFERENCES `accounts_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -91,7 +88,7 @@ CREATE TABLE `accounts_user_groups` (
 
 LOCK TABLES `accounts_user_groups` WRITE;
 /*!40000 ALTER TABLE `accounts_user_groups` DISABLE KEYS */;
-INSERT INTO `accounts_user_groups` VALUES (1,2,4),(2,3,3),(3,4,3),(4,5,3);
+INSERT INTO `accounts_user_groups` VALUES (5,6,3),(6,7,3),(7,8,3),(8,9,3),(9,10,3),(10,11,4);
 /*!40000 ALTER TABLE `accounts_user_groups` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -111,7 +108,7 @@ CREATE TABLE `accounts_user_user_permissions` (
   KEY `accounts_user_user_p_permission_id_113bb443_fk_auth_perm` (`permission_id`),
   CONSTRAINT `accounts_user_user_p_permission_id_113bb443_fk_auth_perm` FOREIGN KEY (`permission_id`) REFERENCES `auth_permission` (`id`),
   CONSTRAINT `accounts_user_user_p_user_id_e4f0a161_fk_accounts_` FOREIGN KEY (`user_id`) REFERENCES `accounts_user` (`id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -120,6 +117,7 @@ CREATE TABLE `accounts_user_user_permissions` (
 
 LOCK TABLES `accounts_user_user_permissions` WRITE;
 /*!40000 ALTER TABLE `accounts_user_user_permissions` DISABLE KEYS */;
+INSERT INTO `accounts_user_user_permissions` VALUES (1,1,1),(2,1,2),(3,1,3),(4,1,4),(5,1,5),(6,1,6),(7,1,7),(8,1,8),(9,1,9),(10,1,10),(11,1,11),(12,1,12),(13,1,13),(14,1,14),(15,1,15),(16,1,16),(17,1,17),(18,1,18),(19,1,19),(20,1,20),(21,1,21),(22,1,22),(23,1,23),(24,1,24);
 /*!40000 ALTER TABLE `accounts_user_user_permissions` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -316,7 +314,7 @@ CREATE TABLE `django_admin_log` (
   KEY `django_admin_log_user_id_c564eba6_fk` (`user_id`),
   CONSTRAINT `django_admin_log_content_type_id_c4bce8eb_fk_django_co` FOREIGN KEY (`content_type_id`) REFERENCES `django_content_type` (`id`),
   CONSTRAINT `django_admin_log_user_id_c564eba6_fk` FOREIGN KEY (`user_id`) REFERENCES `auth_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=13 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=38 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -325,7 +323,7 @@ CREATE TABLE `django_admin_log` (
 
 LOCK TABLES `django_admin_log` WRITE;
 /*!40000 ALTER TABLE `django_admin_log` DISABLE KEYS */;
-INSERT INTO `django_admin_log` VALUES (3,'2018-05-15 12:21:29.818933','2','jacobbullock',1,'[{\"added\": {}}]',4,1),(4,'2018-05-15 12:21:44.290343','3','Student',1,'[{\"added\": {}}]',3,1),(5,'2018-05-15 12:21:50.883065','4','Teacher',1,'[{\"added\": {}}]',3,1),(6,'2018-05-15 12:22:09.313491','2','jacobbullock',2,'[{\"changed\": {\"fields\": [\"first_name\", \"last_name\", \"email\", \"groups\", \"last_login\"]}}]',4,1),(7,'2018-05-15 12:32:31.902367','1','Lesson object (1)',1,'[{\"added\": {}}]',7,1),(8,'2018-05-15 12:41:37.538166','2','testuser',1,'[{\"added\": {}}]',8,1),(9,'2018-05-15 12:41:53.166101','2','testuser',2,'[{\"changed\": {\"fields\": [\"first_name\", \"last_name\", \"email\", \"groups\", \"last_login\"]}}]',8,1),(10,'2018-05-15 12:57:32.880600','3','teststudent',1,'[{\"added\": {}}]',8,1),(11,'2018-05-15 12:58:03.871156','3','teststudent',2,'[{\"changed\": {\"fields\": [\"first_name\", \"last_name\", \"email\", \"groups\", \"last_login\"]}}]',8,1),(12,'2018-05-15 12:58:10.356200','1','Lesson object (1)',2,'[{\"changed\": {\"fields\": [\"lesson_student\", \"lesson_teacher\"]}}]',7,1);
+INSERT INTO `django_admin_log` VALUES (3,'2018-05-15 12:21:29.818933','2','jacobbullock',1,'[{\"added\": {}}]',4,1),(4,'2018-05-15 12:21:44.290343','3','Student',1,'[{\"added\": {}}]',3,1),(5,'2018-05-15 12:21:50.883065','4','Teacher',1,'[{\"added\": {}}]',3,1),(6,'2018-05-15 12:22:09.313491','2','jacobbullock',2,'[{\"changed\": {\"fields\": [\"first_name\", \"last_name\", \"email\", \"groups\", \"last_login\"]}}]',4,1),(7,'2018-05-15 12:32:31.902367','1','Lesson object (1)',1,'[{\"added\": {}}]',7,1),(8,'2018-05-15 12:41:37.538166','2','testuser',1,'[{\"added\": {}}]',8,1),(9,'2018-05-15 12:41:53.166101','2','testuser',2,'[{\"changed\": {\"fields\": [\"first_name\", \"last_name\", \"email\", \"groups\", \"last_login\"]}}]',8,1),(10,'2018-05-15 12:57:32.880600','3','teststudent',1,'[{\"added\": {}}]',8,1),(11,'2018-05-15 12:58:03.871156','3','teststudent',2,'[{\"changed\": {\"fields\": [\"first_name\", \"last_name\", \"email\", \"groups\", \"last_login\"]}}]',8,1),(12,'2018-05-15 12:58:10.356200','1','Lesson object (1)',2,'[{\"changed\": {\"fields\": [\"lesson_student\", \"lesson_teacher\"]}}]',7,1),(13,'2018-05-22 18:38:44.164086','1','admin',2,'[{\"changed\": {\"fields\": [\"first_name\", \"last_name\", \"user_permissions\"]}}]',8,1),(14,'2018-05-22 18:38:58.294981','1','admin',2,'[]',8,1),(15,'2018-05-22 18:43:19.859134','4','johndoe',3,'',8,1),(16,'2018-05-22 18:43:19.862545','5','Nick',3,'',8,1),(17,'2018-05-22 18:43:19.865872','3','teststudent',3,'',8,1),(18,'2018-05-22 18:43:19.870056','2','testuser',3,'',8,1),(19,'2018-05-22 18:46:05.801970','6','jacobbullock',2,'[]',8,1),(20,'2018-05-22 18:59:50.027214','11','hanszimmer',1,'[{\"added\": {}}]',8,1),(21,'2018-05-22 19:00:13.541797','11','hanszimmer',2,'[{\"changed\": {\"fields\": [\"first_name\", \"last_name\", \"email\", \"groups\", \"last_login\"]}}]',8,1),(22,'2018-05-22 19:03:13.384937','2','Lesson object (2)',1,'[{\"added\": {}}]',7,1),(23,'2018-05-22 19:03:30.183437','3','Lesson object (3)',1,'[{\"added\": {}}]',7,1),(24,'2018-05-22 19:03:51.677148','4','Lesson object (4)',1,'[{\"added\": {}}]',7,1),(25,'2018-05-22 19:04:05.831328','5','Lesson object (5)',1,'[{\"added\": {}}]',7,1),(26,'2018-05-22 19:04:20.147732','6','Lesson object (6)',1,'[{\"added\": {}}]',7,1),(27,'2018-05-22 19:04:36.835968','7','Lesson object (7)',1,'[{\"added\": {}}]',7,1),(28,'2018-05-22 19:04:50.231635','8','Lesson object (8)',1,'[{\"added\": {}}]',7,1),(29,'2018-05-22 19:05:04.355568','9','Lesson object (9)',1,'[{\"added\": {}}]',7,1),(30,'2018-05-22 19:05:18.901539','10','Lesson object (10)',1,'[{\"added\": {}}]',7,1),(31,'2018-05-22 19:05:31.172320','11','Lesson object (11)',1,'[{\"added\": {}}]',7,1),(32,'2018-05-22 19:05:43.543997','12','Lesson object (12)',1,'[{\"added\": {}}]',7,1),(33,'2018-05-22 19:05:55.353480','13','Lesson object (13)',1,'[{\"added\": {}}]',7,1),(34,'2018-05-22 19:06:10.105260','14','Lesson object (14)',1,'[{\"added\": {}}]',7,1),(35,'2018-05-22 19:06:21.157758','15','Lesson object (15)',1,'[{\"added\": {}}]',7,1),(36,'2018-05-22 19:06:34.914545','16','Lesson object (16)',1,'[{\"added\": {}}]',7,1),(37,'2018-05-22 19:06:58.033061','5','Lesson object (5)',2,'[{\"changed\": {\"fields\": [\"lesson_time\"]}}]',7,1);
 /*!40000 ALTER TABLE `django_admin_log` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -403,7 +401,7 @@ CREATE TABLE `django_session` (
 
 LOCK TABLES `django_session` WRITE;
 /*!40000 ALTER TABLE `django_session` DISABLE KEYS */;
-INSERT INTO `django_session` VALUES ('nmftxedvvtemnftmivl6au28tsl9wat8','ZTdhZmE5ZmZlNjU4M2ViYzIwYzQzNTM5ZTBjOGRmYjM5MTAyYjlmZjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0YWY2OTBkMTdlNmFmZWZmNDVjYzM3N2JjYWExNzA3YzE4MGExOTFjIn0=','2018-05-30 01:21:00.527331');
+INSERT INTO `django_session` VALUES ('ar9rn8zh7q1ko7e06gqp1sjgxmofvcif','ZTdhZmE5ZmZlNjU4M2ViYzIwYzQzNTM5ZTBjOGRmYjM5MTAyYjlmZjp7Il9hdXRoX3VzZXJfaWQiOiIxIiwiX2F1dGhfdXNlcl9iYWNrZW5kIjoiZGphbmdvLmNvbnRyaWIuYXV0aC5iYWNrZW5kcy5Nb2RlbEJhY2tlbmQiLCJfYXV0aF91c2VyX2hhc2giOiI0YWY2OTBkMTdlNmFmZWZmNDVjYzM3N2JjYWExNzA3YzE4MGExOTFjIn0=','2018-06-05 19:02:58.202014');
 /*!40000 ALTER TABLE `django_session` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -426,7 +424,7 @@ CREATE TABLE `schedule_lesson` (
   KEY `schedule_lesson_lesson_teacher_id_57eda47f_fk_accounts_user_id` (`lesson_teacher_id`),
   CONSTRAINT `schedule_lesson_lesson_student_id_12a61b1a_fk_accounts_user_id` FOREIGN KEY (`lesson_student_id`) REFERENCES `accounts_user` (`id`),
   CONSTRAINT `schedule_lesson_lesson_teacher_id_57eda47f_fk_accounts_user_id` FOREIGN KEY (`lesson_teacher_id`) REFERENCES `accounts_user` (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=2 DEFAULT CHARSET=utf8;
+) ENGINE=InnoDB AUTO_INCREMENT=17 DEFAULT CHARSET=utf8;
 /*!40101 SET character_set_client = @saved_cs_client */;
 
 --
@@ -435,7 +433,7 @@ CREATE TABLE `schedule_lesson` (
 
 LOCK TABLES `schedule_lesson` WRITE;
 /*!40000 ALTER TABLE `schedule_lesson` DISABLE KEYS */;
-INSERT INTO `schedule_lesson` VALUES (1,'2018-05-15 12:32:27.000000','120','A2',3,2);
+INSERT INTO `schedule_lesson` VALUES (2,'2018-05-22 18:00:00.000000','60','A1',6,11),(3,'2018-05-30 06:00:00.000000','120','A3',6,11),(4,'2018-05-31 15:00:00.000000','120','A0',6,11),(5,'2018-05-21 18:00:00.000000','60','A0',7,11),(6,'2018-06-01 12:00:00.000000','120','A2',7,11),(7,'2018-07-25 18:00:00.000000','60','A4',7,11),(8,'2018-06-05 12:00:00.000000','60','A0',8,11),(9,'2018-05-29 19:05:02.000000','120','A2',8,11),(10,'2018-05-29 06:00:00.000000','90','A1',8,11),(11,'2018-08-10 06:00:00.000000','120','A1',10,11),(12,'2018-05-31 12:00:00.000000','90','A2',10,11),(13,'2018-07-30 06:00:00.000000','60','A0',10,11),(14,'2018-05-30 12:00:00.000000','120','A3',9,11),(15,'2018-05-28 12:00:00.000000','60','A0',9,11),(16,'2018-06-02 06:00:00.000000','60','A4',9,11);
 /*!40000 ALTER TABLE `schedule_lesson` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;
@@ -448,4 +446,4 @@ UNLOCK TABLES;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;
 /*!40111 SET SQL_NOTES=@OLD_SQL_NOTES */;
 
--- Dump completed on 2018-05-16 12:03:50
+-- Dump completed on 2018-05-23  5:09:02

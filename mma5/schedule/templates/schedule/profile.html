@@ -1,75 +1,62 @@
 {% extends "general_template.html" %}
 
-<!-- ################################# -->
+<!-- PAGE TITLE ################################# -->
 
 {% block title %}
 
-{% if user.is_authenticated %}
+	{% if user.is_authenticated %}
 
-<!-- ################################# -->
+
 	<title>Profile  - {{ user.get_full_name }}</title>
-<!-- ################################# -->
 
-{% else %}
 
-<!-- ################################# -->
-	<title>Login</title>
-<!-- ################################# -->
+	{% else %}
+
+
+	<title>Mika's Music Academy</title>
+
         
-{% endif %}
+	{% endif %}
 
 {% endblock %}
 
-<!-- ################################# -->
+<!-- HEADER ################################# -->
 
 {% block body_header %}
 
-{% if user.is_authenticated %}
+	{% if user.is_authenticated %}
 
-<!-- ################################# -->
-	<h1>My Profile</h1>
-<!-- ################################# -->
 
-{% else %}
+	{% else %}
 
-<!-- ################################# -->
-	<h1>Mika's Music Academy</h1>
-<!-- ################################# -->
         
-{% endif %}
+	{% endif %}
 
 {% endblock %}
 
-<!-- ################################# -->
+<!-- NAVIGATION ################################# -->
 
 {% block navigation %}
 
-{% if user.is_authenticated %}
+	{% if user.is_authenticated %}
 
-<!-- ################################# -->
-	<a class="button button1" href="{% url 'index' %}">Home</a>
-	<a class="button button1" href="{% url 'profile' %}"><strong>My Profile</strong></a>
-	<a class="button button1" href="{% url 'report' %}">My Report</a>
+	<a class="button button1" href="{% url 'index' %}">Schedule</a>
+	<a class="button button1" href="{% url 'profile' %}">Profile</a>
 	<a class="button button1" href="{% url 'logout' %}">Logout</a>
-<!-- ################################# -->
 
-{% else %}
+	{% else %}
 
-<!-- ################################# -->
-
-<!-- ################################# -->
         
-{% endif %}
+	{% endif %}
 
 {% endblock %}
 
-<!-- ################################# -->
+<!-- CONTENT ################################# -->
 
 {% block content %}
 
-{% if user.is_authenticated %}
+	{% if user.is_authenticated %}
 
-<!-- ################################# -->
 	<p>Username: {{ user.get_username }}</p>
 	<p>Name: {{ user.get_full_name }}</p>
 	<p>Email: {{ user.email }}</p>
@@ -81,14 +68,11 @@
 	<p>Guardian Phone: {{ user.guardian_mobile_number }}</p>
 	<p>Guardian Email: {{ user.guardian_email }}</p>
 	
-<!-- ################################# -->
 
-{% else %}
+	{% else %}
 
-<!-- ################################# -->
 	<a class="button button1" href="{% url 'login' %}">Login</a>
 	<a class="button button1" href="{% url 'register' %}">Register</a>
-<!-- ################################# -->
         
 {% endif %}
 

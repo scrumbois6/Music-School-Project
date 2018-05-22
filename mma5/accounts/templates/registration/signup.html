@@ -10,41 +10,112 @@
 
 	{% csrf_token %}
 
-	{{ form.username.errors }}
-	{{ form.email.errors }}
-	{{ form.mobile_number.errors }}
-	{{ form.password1.errors }}
-	{{ form.password2.errors }}
+	<fieldset>
+		<legend>Credentials</legend>
+		
+		{{ form.username.errors }}
+		{{ form.password1.errors }}
+		{{ form.password2.errors }}
 
-	{{ form.username.label_tag }}
-	{{ form.username }}
+		{{ form.username.label_tag }}
+		{{ form.username }}
 
-	{{ form.email.label_tag }}
-	{{ form.email }}
+		{{ form.password1.label_tag }}
+		{{ form.password1 }}
 
-	{{ form.mobile_number.label_tag }}
-	{{ form.mobile_number }}
+		{{ form.password2.label_tag }}
+		{{ form.password2 }}
 
-	{{ form.password1.label_tag }}
-	{{ form.password1 }}
+	</fieldset>
+	
+	<fieldset>
 
-	{{ form.password2.label_tag }}
-	{{ form.password2 }}
+		<legend>Contact</legend>
+
+		{{ form.first_name.errors }}
+		{{ form.last_name.errors }}
+		{{ form.email.errors }}
+		{{ form.mobile_number.errors }}
+
+		{{ form.first_name.label_tag }}
+		{{ form.first_name }}
+
+		{{ form.last_name.label_tag }}
+		{{ form.last_name }}
+
+		{{ form.mobile_number.label_tag }}
+		{{ form.mobile_number }}
+
+		{{ form.email.label_tag }}
+		{{ form.email }}
+
+	</fieldset>
 
 	<fieldset>
+
 		<legend>Address</legend>
 
 		{{ form.street_number.errors }}
 		{{ form.street_name.errors }}
+		{{ form.suburb.errors }}
+		{{ form.state.errors }}
+		{{ form.post_code.errors }}
 
 		{{ form.street_number.label_tag }}
 		{{ form.street_number }}
 
 		{{ form.street_name.label_tag }}
 		{{ form.street_name }}
+
+		{{ form.suburb.label_tag }}
+		{{ form.suburb }}
+
+		{{ form.state.label_tag }}
+		{{ form.state }}
+
+		{{ form.post_code.label_tag }}
+		{{ form.post_code }}
+
 	</fieldset>
 
-	<button type="submit">Register</button>
+	<fieldset>
+
+		<legend>Guardian Information</legend>
+
+		<p>If you are under the age of 18, you must provide your parent or guardians contact information</p>
+
+		{{ form.under_18.errors }}
+		{{ form.guardian_first_name.errors }}
+		{{ form.guardian_last_name.errors }}
+		{{ form.guardian_mobile_number.errors }}
+		{{ form.guardian_email.errors }}
+
+		{{ form.under_18.label_tag }}
+		{{ form.under_18 }}
+
+
+		<div id="gInfo">
+			
+		{{ form.guardian_first_name.label_tag }}
+		{{ form.guardian_first_name }}
+
+		{{ form.guardian_last_name.label_tag }}
+		{{ form.guardian_last_name }}
+
+		{{ form.guardian_mobile_number.label_tag }}
+		{{ form.guardian_mobile_number }}
+
+		{{ form.guardian_email.label_tag }}
+		{{ form.guardian_email }}
+
+		</div>
+	
+	</fieldset>
+
+	<button class="button button1" type="submit">Register</button>
+	<a href="{% url 'index' %}">
+	<button class ="button button2"  type="button">Cancel</button>
+	</a>
 </form>
 
 {% endblock %}

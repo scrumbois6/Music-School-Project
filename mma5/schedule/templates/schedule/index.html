@@ -1,90 +1,69 @@
 {% extends "general_template.html" %}
+{% load static %}
 
-<!-- ################################# -->
+<!-- TITLE ################################# -->
 
 {% block title %}
 
-{% if user.is_authenticated %}
+	{% if user.is_authenticated %}
 
-<!-- ################################# -->
 	<title>Schedule - {{ user.get_full_name }}</title>
 
-<!-- ################################# -->
 
-{% else %}
+	{% else %}
 
-<!-- ################################# -->
-	<title>Login</title>
-<!-- ################################# -->
+	<title>Mika's Music Academy</title>
         
-{% endif %}
+	{% endif %}
 
 {% endblock %}
 
-<!-- ################################# -->
+<!-- HEADER ################################# -->
 
 {% block body_header %}
 
-{% if user.is_authenticated %}
+	{% if user.is_authenticated %}
+	<div id="logo_container">
 
-<!-- ################################# -->
-	<h1>My Schedule</h1>
-
-<!-- ################################# -->
-
-{% else %}
-{% load static %}
-<!-- ################################# -->
-	<div id="frontpage">
-		<div id="logo_container">
-		<img id= "logo" src="{% static 'images/logo.png' %}">
+	<img id= "logo" src="{% static 'images/logo.png' %}">
 			
-		</div>
 	</div>
 
-	<div id="home_buttons">
-		<p style="font-weight: 550;">Login, or Sign Up.</p>
-		<a class="button button1" href="{% url 'login' %}">Login</a>
-		<a class="button button1" href="{% url 'register' %}">Register</a>
+	{% else %}
+	<div id="logo_container">
+
+	<img id= "logo" src="{% static 'images/logo.png' %}">
+			
 	</div>
-<!-- ################################# -->
+	
+
         
-{% endif %}
+	{% endif %}
 
 {% endblock %}
 
-<!-- ################################# -->
+<!-- NAVIGATION ################################# -->
 
 {% block navigation %}
 
-{% if user.is_authenticated %}
+	{% if user.is_authenticated %}
 
-<!-- ################################# -->
-	<a class="button button1" href="{% url 'index' %}"><strong>Home</strong></a>
-	<a class="button button1" href="{% url 'profile' %}">My Profile</a>
-	<a class="button button1" href="{% url 'report' %}">My Report</a>
+	<a class="button button1" href="{% url 'index' %}">Schedule</strong></a>
+	<a class="button button1" href="{% url 'profile' %}">Profile</a>
 	<a class="button button1" href="{% url 'logout' %}">Logout</a>
-<!-- ################################# -->
 
-{% else %}
-
-<!-- ################################# -->
-
-<!-- ################################# -->
-        
-{% endif %}
+	{% endif %}
 
 {% endblock %}
 
-<!-- ################################# -->
+<!-- CONTENT ################################# -->
 
 {% block content %}
 
-{% if user.is_authenticated %}
+	{% if user.is_authenticated %}
 
-<!-- ################################# -->
 	{% for obj in lessons %}
-		{% if obj.lesson_student_id == user.id %}
+		{% if obj.lesson_student_id == user.id or obj.lesson_teacher_id == user.id %}
 			<p>Time: {{obj.lesson_time}}</p>
 			<p>Duration: {{obj.lesson_duration}} minutes</p>
 			<p>Location: Room {{obj.lesson_location}}</p>
@@ -92,21 +71,31 @@
 			<p>Student: {{obj.lesson_student.get_full_name}}</p>
 			<br>
 		{% endif %}
+
 	{% endfor %}
-<!-- ################################# -->
 
-{% else %}
 
-<!-- ################################# -->
+	{% else %}
 
 	
-<!-- ################################# -->
-        
-{% endif %}
+
+	<div class="login-bg">
+	
+
+	<div id="home_buttons">
+		<p>Login, or Sign Up.</p>
+		<a class="button button1" href="{% url 'login' %}">Login</a>
+		<a class="button button1" href="{% url 'register' %}">Register</a>
+	</div>
+	</div>
+       
+	{% endif %}
 
 {% endblock %}
 
 <!-- ################################# -->
+
+
 
 
 
