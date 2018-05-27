@@ -7,7 +7,7 @@
 
 	{% if user.is_authenticated %}
 
-	<title>Schedule - {{ user.get_full_name }}</title>
+	<title>Feedback - {{ user.get_full_name }}</title>
 
 
 	{% else %}
@@ -48,9 +48,9 @@
 
 	{% if user.is_authenticated %}
 
-	<a class="button button1" href="{% url 'index' %}"><strong>Schedule<strong/></a>
+	<a class="button button1" href="{% url 'index' %}">Schedule</a>
 	<a class="button button1" href="{% url 'profile' %}">Profile</a>
-	<a class="button button1" href="{% url 'feedback' %}">Feedback</a>
+	<a class="button button1" href="{% url 'feedback' %}"><strong>Feedback<strong/></a>
 	<a class="button button1" href="{% url 'logout' %}">Logout</a>
 
 	{% endif %}
@@ -75,6 +75,19 @@
 
 	{% endfor %}
 
+	<form method="post" action="/submit_to_db.php" method="post">
+		<label>Student ID</label>
+		<input type="number" name="lesson_student_id" />
+		<br />
+		<label>Teacher ID</label>
+		<input type="number" name="lesson_teacher_id" />
+		<br />
+		<label>Comment</label>
+		<input type="text" name="lesson_comment" />
+		 
+		<br />
+		<input type="submit" value="Add Comment">
+	</form>
 
 	{% else %}
 
