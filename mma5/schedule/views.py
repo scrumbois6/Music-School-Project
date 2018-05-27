@@ -18,6 +18,9 @@ def profile(request):
 def report(request):
 	return render(request, 'schedule/report.html')
 
+def feedback(request):
+	return render(request, 'schedule/feedback.html')
+
 # Landing Page View, from generic_template.html
 class HomePageView(TemplateView):
 	def get(self, request, **kwargs):
