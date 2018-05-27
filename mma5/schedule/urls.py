@@ -8,5 +8,6 @@ urlpatterns = [
     path('instruments', views.instruments, name='instruments'),
     path('profile', views.profile, name='profile'),
     path('report', views.report, name='report'),
+    path('feedback', views.feedback, name='feedback'),
     url(r'^$', views.HomePageView.as_view())
 ]
