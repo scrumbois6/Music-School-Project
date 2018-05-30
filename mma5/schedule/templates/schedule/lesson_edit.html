@@ -1,0 +1,25 @@
+{% extends 'general_template.html' %}
+
+{% block navigation %}
+
+	{% if user.is_authenticated %}
+
+	<a class="navbutton" href="{% url 'index' %}">Schedule</a>
+	<a class="navbutton" href="{% url 'profile' %}">Profile</a>
+	<a class="navbutton" href="{% url 'instrument' %}">Book Instrument</a>
+
+	<a class="navbutton" href="{% url 'logout' %}">Logout</a>
+
+	{% endif %}
+
+{% endblock %}
+
+{% block content %}
+    <div class="inst-module">
+    <h1 style="width: 100%;">New Lesson</h1>
+    <form>{% csrf_token %}
+        {{ form.as_p }}
+        <button class="button button1">Save</button>
+    </form>
+    </div>
+{% endblock %}

@@ -12,11 +12,11 @@
 	</script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
 	</script>
-	
+
 	<!-- Add additional CSS in static file -->
 	{% load static %}
-	
-	
+
+
 	<link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
 	<link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.min.css" rel="stylesheet">
 	<link rel="stylesheet" href="{% static 'css/style.css' %}">
@@ -27,30 +27,29 @@
 	<div class="container">
 
 		<header>
-			{% block body_header %}	
+			{% block body_header %}
 				<div id="logo_container">
-				<a href="{% url 'index' %}">
 				<img id= "logo" src="{% static 'images/logo.png' %}" >
-				</a>
 				</div>
 			{% endblock %}
 		</header>
 
 		<div id="nav">
 			{% block navigation %}
-			{% endblock %}	
+			{% endblock %}
 		</div>
 
 		<div id="content">
-			{% block content %}	
+			{% block content %}
 			{% endblock %}
 		</div>
 
   		<footer>
   		<br><br><br><br><br><br><br><br>
   		<h4 style="color:#ededed;">&copy; 2018 Scrumbois Development Co.</h4>
-  		
+
   		<h5 style="color:#ededed;">2 George Street, Brisbane, QLD, Australia 4000</h5>
+
   		</footer>
 
   	</div>

@@ -1,3 +1,0 @@
-db_23_5_18.sql | This file is the database file for testing. It contains an admin user, 1 teacher, 5 students and 15 				  lessons.
-
-users.txt      | This file contains the username and passwords for the admin, teacher and 5 students that are 						 registered in the test data .sql file.

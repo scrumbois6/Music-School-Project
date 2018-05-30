@@ -1,0 +1,145 @@
+{% extends "general_template.html" %}
+{% load static %}
+
+<!-- TITLE ################################# -->
+
+{% block title %}
+
+	{% if user.is_authenticated %}
+
+	<title>Schedule - {{ user.get_full_name }}</title>
+
+
+	{% else %}
+
+	<title>Mika's Music Academy</title>
+
+	{% endif %}
+
+{% endblock %}
+
+<!-- HEADER ################################# -->
+
+{% block body_header %}
+
+	{% if user.is_authenticated %}
+	<div id="logo_container">
+
+	<img id= "logo" src="{% static 'images/logo.png' %}">
+
+
+	</div>
+    <p class="welcome">Welcome, {{ user.get_full_name }}.</p>
+	{% else %}
+	<div id="logo_container">
+
+	<img id= "logo" src="{% static 'images/logo.png' %}">
+
+	</div>
+
+
+	{% endif %}
+
+{% endblock %}
+
+<!-- NAVIGATION ################################# -->
+
+{% block navigation %}
+
+	{% if user.is_authenticated %}
+
+	<a class="navbutton" href="{% url 'index' %}">Schedule</strong></a>
+	<a class="navbutton" href="{% url 'profile' %}">Profile</a>
+	<a class="navbutton" href="{% url 'instrument' %}">Book Instrument</a>
+	<a class="navbutton" href="{% url 'logout' %}">Logout</a>
+
+	{% endif %}
+
+{% endblock %}
+
+<!-- CONTENT ################################# -->
+
+{% block content %}
+
+	{% if user.is_authenticated %}
+            <h2 style="width: 100%;">My Loans</h2>
+    {% for obj in instrument %}
+        {% if obj.loan_student_id == user.id %}
+		    <div class="inst-module">
+		    <p class="lesson-title" style="display: inline-block; width: 80%; font-size: 20px;">{{obj.instrument}}</p>
+		            <hr>
+		    <div class="inst-piece">
+			<p class="lesson-title">Due Back</p>
+			<p class="lesson-text">{{obj.due_back}}</p>
+			</div>
+			<div class="inst-piece">
+			<p class="lesson-title">Condition</p>
+			<p class="lesson-text">{{obj.instrument_condition}}</p>
+			</div>
+            <div class="inst-piece">
+			</div>
+
+            </div>
+        {% endif %}
+
+	{% endfor %}
+            <h2 style="width: 100%;">All Instruments</h2>
+    {% for obj in instrument %}
+        {% if obj.loan_student_id != user.id and obj.instrument_condition != "Broken" %}
+		    <div class="inst-module">
+		    <p class="lesson-title" style="display: inline-block; width: 80%; font-size: 20px;">{{obj.instrument}}</p>
+		            <hr>
+		    <div class="inst-piece">
+			<p class="lesson-title">Due Back</p>
+			<p class="lesson-text">{{obj.due_back}}</p>
+			</div>
+			<div class="inst-piece">
+			<p class="lesson-title">Condition</p>
+			{% if obj.instrument_condition != "Poor" %}
+			<p class="lesson-text" style="color:darkgreen;">{{obj.instrument_condition}}</p>
+			{% else %}
+			<p class="lesson-text" style="color:brown;">{{obj.instrument_condition}}</p>
+			{% endif %}
+			</div>
+
+
+
+
+
+
+
+            </div>
+        {% endif %}
+
+
+	{% endfor %}
+
+
+	{% else %}
+
+
+
+	<div class="login-bg">
+
+
+	<div id="home_buttons">
+		<p>Login, or Sign Up.</p>
+		<a class="button button1" href="{% url 'login' %}">Login</a>
+		<a class="button button1" href="{% url 'register' %}">Register</a>
+	</div>
+	</div>
+
+	{% endif %}
+
+{% endblock %}
+
+<!-- ################################# -->
+
+
+
+
+
+
+
+
+

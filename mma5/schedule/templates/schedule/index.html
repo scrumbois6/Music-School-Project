@@ -13,7 +13,7 @@
 	{% else %}
 
 	<title>Mika's Music Academy</title>
-        
+
 	{% endif %}
 
 {% endblock %}
@@ -26,18 +26,18 @@
 	<div id="logo_container">
 
 	<img id= "logo" src="{% static 'images/logo.png' %}">
-			
-	</div>
 
+
+	</div>
+    <p class="welcome">Welcome, {{ user.get_full_name }}.</p>
 	{% else %}
 	<div id="logo_container">
 
 	<img id= "logo" src="{% static 'images/logo.png' %}">
-			
-	</div>
-	
 
-        
+	</div>
+
+
 	{% endif %}
 
 {% endblock %}
@@ -48,9 +48,11 @@
 
 	{% if user.is_authenticated %}
 
-	<a class="button button1" href="{% url 'index' %}">Schedule</strong></a>
-	<a class="button button1" href="{% url 'profile' %}">Profile</a>
-	<a class="button button1" href="{% url 'logout' %}">Logout</a>
+	<a class="navbutton" href="{% url 'index' %}">Schedule</a>
+	<a class="navbutton" href="{% url 'profile' %}">Profile</a>
+	<a class="navbutton" href="{% url 'instrument' %}">Book Instrument</a>
+
+	<a class="navbutton" href="{% url 'logout' %}">Logout</a>
 
 	{% endif %}
 
@@ -61,15 +63,37 @@
 {% block content %}
 
 	{% if user.is_authenticated %}
-
+	<div id="page-title">
+	    <h2>Schedule</h2>
+	    <a href="/lesson/new">
+	    <button class="button button1">+ New Lesson</button>
+	    </a>
+    </div>
 	{% for obj in lessons %}
 		{% if obj.lesson_student_id == user.id or obj.lesson_teacher_id == user.id %}
-			<p>Time: {{obj.lesson_time}}</p>
-			<p>Duration: {{obj.lesson_duration}} minutes</p>
-			<p>Location: Room {{obj.lesson_location}}</p>
-			<p>Teacher: {{obj.lesson_teacher.get_full_name}}</p>
-			<p>Student: {{obj.lesson_student.get_full_name}}</p>
-			<br>
+		    <div class="lesson-module">
+		    <p class="lesson-text" style="display: inline-block; width: 80%;  ">{{obj.lesson_time}}</p>
+		    <div class="collapse"</div><img src="{% static 'images/collapse.png' %}"/></div>
+		    <div class="expand"</div><img src="{% static 'images/expand.png' %}"/></div>
+		        <div class="hidelesson">
+		            <hr>
+			<p class="lesson-title">Duration</p>
+			<p class="lesson-text">{{obj.lesson_duration}} minutes</p>
+			<p class="lesson-title">Location</p>
+			<p class="lesson-text">Room {{obj.lesson_location}}</p>
+			<p class="lesson-title">Student</p>
+			<p class="lesson-text">{{obj.lesson_student.get_full_name}}</p>
+			<p class="lesson-title">Teacher</p>
+			<p class="lesson-text">{{obj.lesson_teacher.get_full_name}}</p>
+			<p class="lesson-title">Instrument</p>
+			<p class="lesson-text">{{obj.lesson_instrument}}</p>
+
+
+
+
+
+            </div>
+            </div>
 		{% endif %}
 
 	{% endfor %}
@@ -77,18 +101,18 @@
 
 	{% else %}
 
-	
 
-	<div class="login-bg">
-	
+
+
+
 
 	<div id="home_buttons">
 		<p>Login, or Sign Up.</p>
 		<a class="button button1" href="{% url 'login' %}">Login</a>
 		<a class="button button1" href="{% url 'register' %}">Register</a>
 	</div>
-	</div>
-       
+
+
 	{% endif %}
 
 {% endblock %}

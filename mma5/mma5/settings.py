@@ -1,3 +1,4 @@
+
 """
 Django settings for mma5 project.
 
@@ -25,7 +26,7 @@ SECRET_KEY = '-zt5p%yrtg+bb(c=#3l9a_bp%dq!1)=@eb0v$22j2=e6as13bk'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+
 
 
 # Application definition
@@ -80,11 +81,14 @@ DATABASES = {
         'ENGINE': 'django.db.backends.mysql',
 
         #local DB
-        #'NAME': 'mma5','USER': 'admin','PASSWORD': '', 'HOST': 'localhost','PORT': '3306',
+        'NAME': 'mma5','USER': 'admin','PASSWORD': '', 'HOST': 'localhost','PORT': '3306',
 
         #hosted db
-        'NAME': 'u421422941_mma5','USER': 'u421422941_admin','PASSWORD': 'password','HOST': 'sql149.main-hosting.eu.',   # Or an IP Address that your DB is hosted on
-        
+        #'NAME': 'u421422941_mma5','USER': 'u421422941_admin','PASSWORD': 'password','HOST': 'sql149.main-hosting.eu.',   # Or an IP Address that your DB is hosted on
+
+        #python-anywhere-db
+       # 'NAME': 'jacobbullock$mma5','USER': 'jacobbullock','PASSWORD': 'Nuglet15395','HOST': 'jacobbullock.mysql.pythonanywhere-services.com',
+
     }
 }
 
@@ -131,3 +135,8 @@ LOGOUT_REDIRECT_URL = 'index'
 
 #Custom User Model
 AUTH_USER_MODEL = 'accounts.User'
+
+#Allowed Hosts
+ALLOWED_HOSTS = ['jacobbullock.pythonanywhere.com']
+
+STATIC_ROOT = os.path.join(BASE_DIR, "static")

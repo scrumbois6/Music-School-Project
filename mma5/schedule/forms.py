@@ -1,10 +1,18 @@
+from django.db import models
 from django import forms
 from django.forms import ModelForm
 from django.contrib.auth.forms import UserCreationForm
 from django.db import transaction
 from django.contrib.auth.models import Group
 
-from .models import User
+from accounts.models import User
+
+from .models import Lesson
+
+class LessonComment(forms.Form):
+    lesson_student_id = forms.CharField(help_text="Enter your student ID.")
+    lesson_teacher_id = forms.CharField(help_text="Enter your teacher ID.")
+    lesson_comment = forms.CharField(help_text="Enter your teacher ID.")
 
 class StudentSignUpForm(UserCreationForm):
     street_number = forms.IntegerField(required=True, label='Street number')
@@ -29,6 +37,7 @@ class StudentSignUpForm(UserCreationForm):
             }),
         )
 
+
     @transaction.atomic
     def save(self):
         user = super().save(commit=False)
@@ -40,3 +49,8 @@ class StudentSignUpForm(UserCreationForm):
         return user
 
 
+class LessonForm(forms.ModelForm):
+
+    class Meta:
+        model = Lesson
+        fields = ('lesson_duration', 'lesson_location', 'lesson_instrument', 'feedback_student')

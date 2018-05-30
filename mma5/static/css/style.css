@@ -1,0 +1,414 @@
+/* Doc Styles */
+* {
+  font-family: 'Open Sans', sans-serif;
+
+}
+
+body{
+  background: #f7f7f7;
+}
+
+/* END BLOCK STYLES */
+
+/* Header Styles */
+
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+  padding: 1%
+}
+
+/* END HEADER STYLES */
+
+/* PAGE SECTIONS */
+header {
+  width: 100%;
+  color: white;
+  height: 20vh;
+  background-color: #f7f7f7;
+}
+
+#nav{
+  width: 100%;
+  min-height: 10vh;
+
+  background-color: #0062cc;
+
+}
+
+#content{
+  width: 100%;
+  min-height: 62vh;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
+  align-content: flex-start;
+}
+
+.login-bg {
+  width: 100%;
+  min-height: 80vh;
+  background-image: white;
+}
+
+footer{
+  min-height:30vh;
+  background: #1e1e1e;
+  border-top:2px solid white;
+  color:white;
+  text-align: center;
+}
+
+
+/* BUTTON STYLES */
+
+.button {
+  background-color: #4286f4; /* Matching title blue */
+  border-radius: 4px;
+  color: white;
+  padding: 12px 24px;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  -webkit-transition-duration: 0.4s; /* For use with Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  text-decoration: none;
+  margin-top: 2.5vh;
+}
+
+.button1 {
+    background-color: white;
+    color: black;
+    border: 2px solid #0062cc;
+}
+
+.button1:hover {
+    background-color: #0062cc;
+    border: 2px solid #efefef;
+    color: white;
+}
+
+.button2 {
+    background-color: white;
+    border: 2px solid #0062cc;
+    padding: 8px 16px;
+    color: black;
+}
+
+.button2:hover {
+    background-color: #0062cc;
+    border: 2px solid #efefef;
+    color: white;
+}
+
+.button3 {
+    background-color: white;
+    border: 2px solid #e00303;
+    padding: 8px 16px;
+    color: black;
+}
+
+.button3:hover {
+    background-color: #e00303;
+    border: 2px solid #efefef;
+    color: white;
+}
+
+.navbutton {
+  color: white;
+  padding-top: 3.5vh;
+  padding-bottom: 1.5vh;
+  padding-left: 2.5vw;
+  padding-right: 2.5vw;
+  text-align: center;
+  display: inline-block;
+  font-size: 16px;
+  -webkit-transition-duration: 0.4s; /* For use with Safari */
+  transition-duration: 0.4s;
+  cursor: pointer;
+  background-color: #0062cc;
+  text-decoration: none;
+
+}
+
+
+
+
+
+/* END BUTTON STYLES */
+
+/* FORM STYLES */
+
+.form {
+  margin-left:auto;
+  margin-right:auto;
+  max-width: 60%;
+  background: #F7F7F7;
+  padding: 25px 15px 25px 10px;
+  font-size: 12px;
+  color: #888;
+  text-shadow: 1px 1px 1px #FFF;
+  border:1px solid #E4E4E4;
+  text-align: center;
+  margin-bottom: 5vh;
+
+
+}
+
+.form label {
+    display: block;
+    margin: 0px;
+    font-weight: 400;
+    color: black;
+    opacity: 0.7;
+    font-size: 12px;
+
+}
+
+.form label>span {
+    float: left;
+    width: 20%;
+    text-align: right;
+    padding-right: 10px;
+    margin-top: 10px;
+    color: #888;
+}
+
+
+
+.form .form-header {
+  margin: 0;
+  padding: 10px;
+
+  text-align: left;
+  font-size: 28pt;
+  text-align: center;
+}
+
+.form input[type="text"], .form input[type="password"], .form input[type="email"], .form input[type="number"], .form textarea, .form select, .form input[type="checkbox"] {
+  border: 1px solid #DADADA;
+  color: #888;
+  height: 30px;
+  margin-bottom: 16px;
+  margin-right: 6px;
+  margin-top: 2px;
+  outline: 0 none;
+  padding: 3px 3px 3px 5px;
+  width: 70%;
+  font-size: 14px;
+  line-height:15px;
+  box-shadow: inset 0px 1px 4px #ECECEC;
+  -moz-box-shadow: inset 0px 1px 4px #ECECEC;
+  -webkit-box-shadow: inset 0px 1px 4px #ECECEC;
+  text-align: center;
+  display:inline-block;
+  background: white;
+}
+
+form input[type="checkbox"]{
+  margin-left: 49%;
+}
+
+.form .form-group {
+  display: inline;
+}
+
+.form fieldset {
+  margin-top: 15px;
+  margin-left: 0;
+  padding: 10px;
+
+  border: 1px solid #DADADA;
+  box-shadow: inset 0px 1px 4px #ECECEC;
+}
+
+.form fieldset legend {
+  text-align: center;
+  margin-left: 0;
+}
+
+
+/* LOGIN PAGE */
+
+#logo_container{
+  display: inline-block;
+  vertical-align: top;
+  width: 20%;
+  margin-left: 2%;
+  display: inline-block;
+}
+
+#home_buttons {
+  width: 25%;
+  margin: auto;
+  text-align: left;
+}
+
+#logo {
+  width: 120%;
+}
+
+#home_buttons{
+  padding-top: 25vh;
+}
+
+.welcome{
+    width: 40%;
+    margin-left: 30%;
+    text-align: right;
+    font-size: 24px;
+    display: inline-block;
+    color:black;
+    padding-top: 10vh;
+}
+
+/* Lesson Module and Text */
+
+.lesson-module{
+    margin-top: 2%;
+    border-radius: 5px;
+    border: 2px solid #0062cc;
+    background: white;
+    display: inline-block;
+    padding: 1%;
+    margin-bottom: 1.125%;
+    -webkit-box-shadow: -5px -2px 13px 1px rgba(153,153,153,1);
+    -moz-box-shadow: -5px -2px 13px 1px rgba(153,153,153,1);
+    box-shadow: -5px -2px 13px 1px rgba(153,153,153,1);
+    overflow: hidden;
+    flex-basis: 100% | auto;
+    margin-left: 4%;
+    width: 17.5vw;
+}
+
+.profile-module{
+    margin-top: 2%;
+    border-radius: 5px;
+    border: 2px solid #0062cc;
+    background: white;
+    display: inline-block;
+    padding: 1%;
+    margin-bottom: 1.125%;
+    -webkit-box-shadow: -5px -2px 13px 1px rgba(153,153,153,1);
+    -moz-box-shadow: -5px -2px 13px 1px rgba(153,153,153,1);
+    box-shadow: -5px -2px 13px 1px rgba(153,153,153,1);
+    overflow: hidden;
+    display: flex;
+     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-left: 3.5%;
+    width: 90vw;
+}
+
+.inst-module{
+    margin-top: 2%;
+    border-radius: 5px;
+    border: 2px solid #0062cc;
+    background: white;
+    display: inline-block;
+    padding: 1%;
+    margin-bottom: 1.125%;
+    -webkit-box-shadow: -5px -2px 13px 1px rgba(153,153,153,1);
+    -moz-box-shadow: -5px -2px 13px 1px rgba(153,153,153,1);
+    box-shadow: -5px -2px 13px 1px rgba(153,153,153,1);
+    overflow: hidden;
+    display: flex;
+     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    align-items: flex-start;
+    align-content: flex-start;
+    margin-left: 3.5%;
+    width: 20vw;
+}
+
+
+
+.lesson-title{
+    font-weight: bold;
+    font-size: 18;
+    padding: 2px;
+    margin-left: 3%;
+}
+
+.lesson-text{
+        vertical-align: top;
+        font-weight: 100;
+        padding: 2px;
+
+        margin-left: 3%;
+
+
+}
+
+.profile-piece{
+     flex-basis: 100% | auto;
+        display: inline-block;
+        vertical-align: top;
+        width: 20%;
+}
+
+.inst-piece{
+     flex-basis: 100% | auto;
+        display: inline-block;
+        vertical-align: top;
+        width: 40%;
+}
+
+#page-title{
+    margin-left: 1%;
+    style:display: block;
+    width: 100%;
+
+}
+
+.collapse, .expand{
+    width: 12%;
+    padding-top:1.4vh;
+    color: blue;
+    text-align: right;
+    display: inline-block;
+    cursor: pointer;
+}
+
+img{
+    width: 100%;
+}
+.collapse:hover, .expand:hover{
+    color: darkblue;
+}
+
+.hidelesson{
+
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
