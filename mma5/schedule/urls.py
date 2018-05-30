@@ -8,5 +8,6 @@ urlpatterns = [
     path('profile', views.profile, name='profile'),
     path('instrument', views.instrument, name='instrument'),
     url(r'^lesson/new/$', views.lesson_new, name='lesson_new'),
+
     url(r'^$', views.HomePageView.as_view())
 ]

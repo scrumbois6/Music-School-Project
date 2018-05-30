@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
 from django.views.generic import TemplateView
+from django.http import HttpResponse, HttpResponseRedirect
 
 from django.urls import reverse
 from .forms import LessonForm
@@ -13,6 +14,7 @@ from .models import Lesson, Inst
 
 
 from django.contrib.auth.models import User
+
 
 
 
@@ -49,6 +51,9 @@ def lesson_new(request):
     return render(request, 'schedule/lesson_edit.html', {'form': form})
 
 
+
+def feedback(request):
+	return render(request, 'schedule/feedback.html')
 
 # Landing Page View, from generic_template.html
 class HomePageView(TemplateView):

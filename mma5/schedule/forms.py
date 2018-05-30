@@ -14,6 +14,11 @@ class LessonComment(forms.Form):
     lesson_teacher_id = forms.CharField(help_text="Enter your teacher ID.")
     lesson_comment = forms.CharField(help_text="Enter your teacher ID.")
 
+class LessonComment(forms.Form):
+    lesson_student_id = forms.CharField(help_text="Enter your student ID.")
+    lesson_teacher_id = forms.CharField(help_text="Enter your teacher ID.")
+    lesson_comment = forms.CharField(help_text="Enter your teacher ID.")
+
 class StudentSignUpForm(UserCreationForm):
     street_number = forms.IntegerField(required=True, label='Street number')
 

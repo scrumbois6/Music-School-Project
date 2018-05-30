@@ -1,0 +1,130 @@
+{% extends "general_template.html" %}
+{% load static %}
+
+<!-- TITLE ################################# -->
+
+{% block title %}
+
+	{% if user.is_authenticated %}
+
+	<title>Feedback - {{ user.get_full_name }}</title>
+
+
+	{% else %}
+
+	<title>Mika's Music Academy</title>
+        
+	{% endif %}
+
+{% endblock %}
+
+<!-- HEADER ################################# -->
+
+{% block body_header %}
+
+	{% if user.is_authenticated %}
+	<div id="logo_container">
+
+	<img id= "logo" src="{% static 'images/logo.png' %}">
+			
+	</div>
+
+	{% else %}
+	<div id="logo_container">
+
+	<img id= "logo" src="{% static 'images/logo.png' %}">
+			
+	</div>
+	
+
+        
+	{% endif %}
+
+{% endblock %}
+
+<!-- NAVIGATION ################################# -->
+
+{% block navigation %}
+
+	{% if user.is_authenticated %}
+
+	<a class="button button1" href="{% url 'index' %}">Schedule</a>
+	<a class="button button1" href="{% url 'profile' %}">Profile</a>
+	<a class="button button1" href="{% url 'feedback' %}"><strong>Feedback<strong/></a>
+	<a class="button button1" href="{% url 'logout' %}">Logout</a>
+
+	{% endif %}
+
+{% endblock %}
+
+<!-- CONTENT ################################# -->
+
+{% block content %}
+
+	{% if user.is_authenticated %}
+
+	{% for obj in lessons %}
+		{% if obj.lesson_student_id == user.id or obj.lesson_teacher_id == user.id %}
+		<h2>Please leave your comment for the following lesson, as detailed below.</h2>
+		<br><br /> 
+			<p>Time: {{obj.lesson_time}}</p>
+			<p>Duration: {{obj.lesson_duration}} minutes</p>
+			<p>Location: Room {{obj.lesson_location}}</p>
+			<p>Teacher: {{obj.lesson_teacher.get_full_name}}</p>
+			<p>Teacher ID: {{obj.lesson_teacher_id}}</p>
+			<p>Student: {{obj.lesson_student.get_full_name}}</p>
+			<p>Student ID: {{obj.lesson_student_id}}</p>
+			<br>
+			<br><br /> 
+
+		<form method="post" action="" method="post">
+			{% csrf_token %}
+			<table>
+				{{ form }}
+			</table>
+			<input type="submit" value="Add Comment">
+		</form>
+
+		<!-- Draft Form -->
+		<!-- ## <label>Student ID: {{obj.lesson_student_id}}</label>
+			<input type="number" name="lesson_student_id" />
+			<br />
+			<label>Teacher ID: {{obj.lesson_teacher_id}}</label>
+			<input type="number" name="lesson_teacher_id" />
+			<br />
+			<label>Comment: </label>
+			<input type="text" name="lesson_comment" /> ## -->
+
+		{% endif %}
+
+	{% endfor %}
+
+
+	{% else %}
+
+	
+
+	<div class="login-bg">
+	
+
+	<div id="home_buttons">
+		<p>Login, or Sign Up.</p>
+		<a class="button button1" href="{% url 'login' %}">Login</a>
+		<a class="button button1" href="{% url 'register' %}">Register</a>
+	</div>
+	</div>
+       
+	{% endif %}
+
+{% endblock %}
+
+<!-- ################################# -->
+
+
+
+
+
+
+
+
+

@@ -51,12 +51,14 @@
 
 	{% if user.is_authenticated %}
 
+
 	<a class="navbutton" href="{% url 'index' %}">Schedule</a>
 	<a class="navbutton" href="{% url 'profile' %}">Profile</a>
 	<a class="navbutton" href="{% url 'instrument' %}">Book Instrument</a>
 
 
 	<a class="navbutton" href="{% url 'logout' %}">Logout</a>
+
 
 	{% else %}
 
